@@ -1,57 +1,21 @@
 ---
 title: "Week 10 Worklog"
-date: "2025-09-09"
+date: "2025-11-10"
 weight: 2
 chapter: false
 pre: " <b> 1.10. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 10 Objectives:
-
-* Connect and get acquainted with members of First Cloud Journey.
-* Understand basic AWS services, how to use the console & CLI.
 
 ### Tasks to be carried out this week:
 | Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 2   |**Extended and hardened the Step Functions workflow with activation, pause/resume via callbacks, robust error handling, and parallelized checks.**<br>&emsp;+ Updated the **SubmitApplication Lambda** to start state machine executions automatically with the right payload, turning manual tests into an event-driven workflow entry point.<br>&emsp;+ Implemented a **callback-based Pending Review step** using task tokens so flagged applications pause in Step Functions until a separate review Lambda resumes them with an approve/reject decision.<br>&emsp;+ Added **Retry** and **Catch** blocks to critical Task states so transient Lambda/API failures are retried with backoff while unrecoverable errors flow into explicit error-handling paths.<br>&emsp;+ Converted sequential checks into a **Parallel state** so name and address validations run concurrently, then adjusted the Choice logic to interpret the combined parallel output correctly.<br>&emsp;+ Wrapped up by exploring **advanced Step Functions resources** (long-running workflows, Map/Wait states, and official samples) to plan next steps for production-ready orchestration patterns. | 10/11/2025 | 10/11/2025      |[StartExecution – AWS Step Functions](https://docs.aws.amazon.com/step-functions/latest/apireference/API_StartExecution.html)<br><br>[Callback patterns with task tokens](https://docs.aws.amazon.com/step-functions/latest/dg/callback-task-sample-sqs.html)<br><br>[Handling errors in Step Functions workflows](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-error-handling.html)<br><br>[Parallel workflow state](https://docs.aws.amazon.com/step-functions/latest/dg/state-parallel.html)<br><br>[Tutorials and workshops for learning Step Functions](https://docs.aws.amazon.com/step-functions/latest/dg/learning-resources.html)|
+| 3   | - Finished building ETL Pipeline for CloudWatch logs <br> - Fixed ETL Pipeline for CloudTrail logs: Processed logs from different dates cause schema error due to randomized field order in struct data type <br> - Successfully used AWS SSM to get EC2 system logs after IR Responses <br> - Succesfully intergrated threat notification chatbots in Slack and Telegram <br> - Successfully shown formatted notifications based on live threat findings <br> Got sent over 1000 mails because team member triggered all GuardDuty sample findings combined with multiple test SNS <br> - Team member suggested adding SES (Simple Email Service) to format emails and send| 11/11/2025 | 11/11/2025 ||
+| 4   |- Did research into CloudTrail Lake: Good for future usage specifically for in-depth CloudTrail log analysis, deemed unnecessary for current project due to it being CloudTrail exclusive <br> - Updated CloudTrail ETL Lambda: promoted fields in request parameters into collumns for better query and less schema crawling errors => Reliably crawled proccessed data between days <br> - Team members started on designing dashboard site, suggested intergrating Grafana <br> - Team member finished Lambda IR Functions <br> - Got started on updating proposal to the new format| 12/11/2025 | 12/11/2025      ||
+| 5   | - Succesfully tested using Lambda to query with Athena to prepare for API Gateway for Dashboard <br> - Family matters | 13/11/2025 | 13/11/2025      | [Lambda Athena Query Guide](https://www.youtube.com/watch?v=a_Og1t3ULOI)|
+| 6   | - Crawling raw GuardDuty exported log proved to be a bad idea, a large amount of schema errors <br> - Built a lambda ETL Pipeline for GuardDuty logs <br> - Revised architecture: <br>&emsp; + Directed the log from Guard Duty to the Raw Log S3 Bucket to under go ETL Pipeline <br>&emsp; Added SES as per team member's suggestion <br> - Researched on alternative architectures: We might be able to remove Crawler altogether, due the custom Lambda ETL pipeline we created, we already did most of the Crawler's service. Crawler is mostly used for large amount of logs with various data types, except for **struct** data type it seems, which CloudWatch,CloudTrail and Guard Duty logs have a lot of. After formatting the logs into Parquet with custom Lambda ETL, Crawler's purpose now is to turn it into Catalog Table, which alternatively can be done with Lambda. Will be testing this alternative approach. <br> - Successfully updated CloudTrail ETL Pipeline to directly call Glue API to create table without the use of Crawler <br> - Included the use of KMS in the project due to the sensitive nature of the security logs <br> - Joined the AWS Cloud Mastery Series #1 - AI/ML/GenAI on AWS | 14/11/2025 | 16/11/2025 |[Event Summary and Experience](../../4-EventParticipated/4.3-Event3)|
 
 
 ### Week 10 Achievements:
-
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
