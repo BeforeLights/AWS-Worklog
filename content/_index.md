@@ -9,15 +9,15 @@ chapter: false
 # Internship Report
 
 ### Student Information:
-&emsp; **Full Name:** Huynh An Khuong
+&emsp; **Full Name:** Mai Quốc Anh
 
-&emsp; **Phone Number:** 0964440342
+&emsp; **Phone Number:** 0931823911
 
-&emsp; **Email:** huynhankhuong0511@gmail.com
+&emsp; **Email:** maiquocanh2608@gmail.com
 
-&emsp; **University:** FPTU Ho Chi Minh Campus
+&emsp; **University:** FPT University HCM
 
-&emsp; **Major:** Information Technology
+&emsp; **Major:** Software Engineering
 
 &emsp; **Internship Company:** Amazon Web Services Vietnam Co., Ltd.
 
@@ -25,7 +25,7 @@ chapter: false
 
 &emsp; **Internship Duration:** From 8/09/2025 to 12/12/2025
 
-![Your profile picture](/images/KhuongAnhThe.jpg)
+![Your profile picture](/images/quocanh.jpg)
 
 ### Report Content
 
