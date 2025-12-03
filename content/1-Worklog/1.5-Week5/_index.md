@@ -1,57 +1,23 @@
 ---
 title: "Week 5 Worklog"
-date: "2025-09-09"
-weight: 1
+date: "2025-10-06"
+weight: 5
 chapter: false
 pre: " <b> 1.5. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 5 Objectives:
-
-* Connect and get acquainted with members of First Cloud Journey.
-* Understand basic AWS services, how to use the console & CLI.
 
 ### Tasks to be carried out this week:
 | Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 2   |**Completed end-to-end setup of a hybrid DNS environment using Route 53 Resolver with AWS Managed Microsoft AD and RD Gateway.**<br>&emsp;+ Launched the provided **CloudFormation** template to create a custom **VPC**, public/private subnets across two **Availability Zones**, **Internet Gateway**, and **NAT Gateways** for outbound access from private subnets.<br>&emsp;+ Configured a **Remote Desktop Gateway (RDGW) EC2 instance** in the public subnet, adjusted **security groups** for controlled **RDP/ICMP** access, and verified remote connectivity from the local workstation.<br>&emsp;+ Deployed **AWS Managed Microsoft AD**, joined RDGW to the managed domain, and confirmed domain authentication from the RD session host. <br>&emsp;+ Created **Route 53 Resolver outbound endpoints** in private subnets and forwarding rules so VPC workloads can resolve on-premises-style domain names via the managed AD DNS servers. <br>&emsp;+ Created **Route 53 Resolver inbound endpoints** and rules to allow external or on-premises DNS forwarders to resolve private AWS hostnames in the VPC, completing the hybrid DNS flow. <br>&emsp;+ Tested DNS name resolution from the RDGW instance to ensure queries for both **AWS private records and on-premises-style domains** were correctly routed through the configured Resolver endpoints and AD DNS. | 06/10/2025 | 06/10/2025      | [AWS Managed Microsoft AD - AWS Directory Service](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html)<br><br>[What is Route 53 VPC Resolver?](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver.html)<br><br>[NAT Gateways - Amazon VPC](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html) |
+| 3   |  | 07/10/2025 | 07/10/2025      | |
+| 4   |  | 08/10/2025 | 08/10/2025      | |
+| 5   |  | 09/10/2025 | 09/10/2025      | |
+| 6   |  | 10/10/2025 | 10/10/2025      | |
 
 
 ### Week 5 Achievements:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Proposal Development: Successfully created and updated the team's workshop architecture diagram, learning the best practices for diagramming AWS architecture.
