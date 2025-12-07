@@ -1,89 +1,83 @@
 ---
 title: "Event 1"
-date: "2005-09-18"
+date: "2025-09-18"
 weight: 1
 chapter: false
 pre: " <b> 4.1. </b> "
 ---
 
-# Summary Report: “Vietnam Cloud Day 2025 : Ho Chi Minh City Connect Edition for Builders: Gen AI and Data track”
+# Summary Report: “AI-Driven Development Life Cycle: Reimagining Software Engineering”
 
 ### Event Objectives
 
-- Vietnam's premier technology event, bringing together businesses, builders, and leaders to harness cloud and AI innovation.
-- Explore the latest in generative AI, cloud technologies, and digital solutions.
-- Gain valuable insights through keynote sessions, learn from customer success stories, participate in hands-on workshops, and discover cutting-edge solutions from Amazon Web Services (AWS) experts and partners.
+The event aimed to provide a deep understanding of the transformative impact of generative AI on software development. Key objectives included:
+
+- Introducing the AI-Driven Development Life Cycle (AI-DLC) framework and its foundational principles.
+- Demonstrating the capabilities of Kiro and Amazon Q Developer as tools to support AI-driven development.
+- Exploring how generative AI can enhance productivity and streamline the software engineering process.
 
 ### Speakers
 
-- **H.E Pham Duc Long** – Vice Minister of Science and Technology
-- **H.E Marc E. Knapper** – US Ambassador to Vietnam
-- **Jaime Valles** – Vice President, General Manager Asia Pacific and Japan, AWS
-- **Jeff Johnson** – Managing Director ASEAN, AWS
-- **Dr Jens Lottner** – CEO, Techcombank
-- **Dieter Botha** – CEO, TymeX
-- **Trang Phung** – CEO & Co-Founder, U2U Network
-- **Vu Van** – CEO & Co-Founder, ELSA Corp
-- **Nguyen Hoa Binh** – Chairman, Texttech Group
-- **Taiki Dang** – Solutions Architect, AWS 
-- **Jun Kai Loke** – AI/ML Specialist SA, AWS
-- **Kien Nguyens** – Solutions Architect, AWS
-- **Tamelly Lim** – Storage Specialist SA, AWS 
-- **Binh Tran** – Senior Solutions Architect, AWS 
-- **Michael Armentano** - Principal WW GTM Specialist, AWS
+The session featured insights from two distinguished speakers:
+
+- **Toan Huynh** – Specialist SA, PACE
+- **My Nguyen** – Senior Prototyping Architect, Amazon Web Services - ASEAN
 
 ### Key Highlights
 
-#### AWS Customer Keynotes
+The event focused on the AI-DLC framework, which reimagines software development by positioning AI as a collaborative partner. Key concepts included:
 
-#### Building a Unified Data Foundation on AWS for AI and Analytics Workloads
+- **AI-DLC Core Concept:** The framework emphasizes a human-centric approach where AI acts as a collaborator to augment developer capabilities. This results in accelerated development cycles, reducing timelines from weeks or months to mere hours or days.
 
-- Constructing a unified, scalable data foundation on AWS, specifically tailored to support AI and analytics workloads
-- Cover key components such as: 
-    + **Data ingestion**
-    + **Storage**
-    + **Processing**
-    + **Governance**
-- Ensuring that organizations can effectively manage and utilize their data for advanced analytics and AI initiatives
+- **AI-DLC Workflow:** The iterative workflow alternates between AI-driven tasks (e.g., creating plans, implementing solutions, seeking clarifications) and human-driven tasks (e.g., providing clarifications, validating solutions). AI only executes solutions after human validation, ensuring quality and alignment.
 
-#### Building the Future: Gen AI Adoption and Roadmap on AWS
+- **AI-DLC Stages:** The lifecycle is divided into three distinct stages:
+  - **Inception:** Establishing context, elaborating user intent through user stories, and planning tasks using Units of Work.
+  - **Construction:** Domain modeling, code generation, testing, and deploying infrastructure as code (IaC) with automated tests.
+  - **Operation:** Managing production deployments and addressing incidents.
 
-- Showcase comprehensive vision, emerging trends, and strategic roadmap for the adoption of Generative AI (GenAI) technologies
-- Cover key AWS services and initiatives designed to empower organizations in leveraging GenAI to drive innovation and efficiency.
+- **Challenges Addressed by AI-DLC:**
+  - Scaling AI development for complex projects.
+  - Enhancing control and collaboration with AI agents.
+  - Maintaining code quality from proof-of-concept to production.
 
-#### AI-Driven Development Lifecycle (AI-DLC)
+### Deep Dive: Kiro - The AI IDE for Prototype to Production
 
-- Transformative, AI-centric approach reshaping the future of software implementation by fully embedding AI as a central collaborator in the entire software development lifecycle.
+The session included a detailed demonstration of **Kiro**, an AI-first Integrated Development Environment (IDE) designed to support the AI-DLC framework. Key features of Kiro include:
 
-#### Securing Generative AI Applications with AWS: Fundamentals and Best Practices
+- **Spec-Driven Development:** Kiro transforms high-level prompts (e.g., "Build a Slack-like chat application") into structured artifacts such as:
+  - `requirements.md` for clear requirements.
+  - `design.md` for system design.
+  - `tasks.md` for discrete, actionable tasks.
+  This structured approach ensures traceability and shifts development from intuition-based coding to a systematic process.
 
-- Explore security challenges at each layer of the generative AI stack—infrastructure, models, and applications.
-- Showcase built-in security measures such as encryption, zero-trust architecture, continuous monitoring, and fine-grained access controls to safeguard generative AI workloads
-
-#### Beyond Automation: AI Agents as Your Ultimate Productivity Multipliers
-
-- Paradigm shift where AI agents aren't just tools, but intelligent partners actively driving businesses forward.
-- Showcases upcoming AWS AI Agent: AWS Quick Suite
+- **Agentic Workflows:** Kiro’s AI agents autonomously execute tasks while keeping developers in control. Key features include:
+  - **Implementation Plan:** Kiro generates detailed plans with tasks and sub-tasks linked to specific requirements for validation.
+  - **Agent Hooks:** These hooks trigger AI agents to perform tasks like generating documentation, writing unit tests, or optimizing code performance in the background.
 
 ### Key Takeaways
 
-#### Bridging Theory with Industry Application
-- **The Critical Role of Data Pipelines in AI/ML**: The sessions confirmed that sophisticated AI/ML models are entirely dependent on a robust data foundation. This involves more than just storing data; it requires well-architected pipelines for ingestion, processing, governance, and storage, which is the true engineering challenge before any model training can begin.
-- **The Shift Towards AI-Augmented Development and Asynchronous Systems**: The future of software development was presented as a combination of two powerful trends. First, the **AI-Driven Development Lifecycle (AI-DLC)**, with tools like **Amazon Q Developer**, is set to become a standard, augmenting developer productivity. Second, there was a strong preference for **event-driven, asynchronous communication** over traditional synchronous APIs to build more resilient and scalable systems.
-- **Integrating Security Throughout the Development Lifecycle**: Security is not a final step but an integral part of the entire development process. The discussions covered securing the full stack—from the cloud infrastructure and the AI models to the application layer itself.
+- **AI-Driven Production Readiness:** Kiro ensures production-ready code by generating detailed design documents (e.g., data flow diagrams, API contracts) and unit tests before implementation begins.
+- **Human Control via Artifacts:** Developers maintain oversight by validating and refining artifacts (requirements, designs, task plans) before AI agents execute the implementation.
 
-***
+### Applying Insights to Work
+
+The event provided actionable insights for integrating AI-driven tools into my workflow:
+
+- **Adopting AI Coding Assistants:** Tools like Amazon Q Developer can automate repetitive tasks, enabling me to focus on high-value activities.
+- **Prioritizing Human-Centric Tasks:** By delegating routine tasks to AI, I can dedicate more time to creative and strategic activities such as domain modeling and architectural design.
 
 ### Event Experience
 
-The **"Vietnam Cloud Day 2025"** was incredibly valuable as it provided a clear, practical context for many of the theoretical concepts I'm learning in my Computer Technology program. It bridged the gap between academic knowledge and real-world industry application.
+Attending the **AI-Driven Development Life Cycle: Reimagining Software Engineering** event was an eye-opening experience. The session highlighted how generative AI is evolving from a coding assistant to a central orchestrator of the development process. The structured approach of AI-DLC, combined with tools like Kiro, demonstrated the potential to revolutionize software engineering.
 
-The showcase of the **AI-Driven Development Lifecycle** was a highlight. It suggested a paradigm shift where the developer's role evolves to focus more on architecture and complex problem-solving, while AI assistants like **Amazon Q Developer** handle more of the routine code generation and debugging. Learning about upcoming technologies like the **AWS Quick Suite** for AI agents provided a compelling look at the next wave of automation.
+The live demonstration of Kiro was particularly impactful, showcasing how a simple text prompt could be transformed into a comprehensive, executable development plan. This approach not only accelerates development but also ensures traceability and maintainability.
 
-I left the event with a much clearer understanding of current industry trends and a better sense of which skills to focus on to prepare for future internships and my career. 
+### Lessons Learned
 
-***
+- The structured, human-validated approach of AI-DLC addresses critical challenges in AI-driven development, including scalability, control, and code quality.
+- Generative AI, when integrated thoughtfully, can significantly enhance productivity while maintaining high standards of quality.
 
-#### Some event photos
-![Selfie](/images/4-Event/SelfieCD.jpg)
-![Group picture](/images/4-Event/GroupCD.jpg)
+### Event Photos
+
+![Group picture during the event](../4.1-Event1/TheBois-AIDLC.jpg)
