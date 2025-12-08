@@ -16,7 +16,8 @@ pre: " <b> 2. </b> "
 **Date:** December 5, 2025  
 **Program:** AWS First Cloud Journey (FCJ) Internship  
 **Project Duration:** 6 Weeks  
-**Status:** Ready for Review & Approval
+**Status:** Ready for Review & Approval <br>
+**Proposal Link:** [Proposal](https://docs.google.com/document/d/1RcPJmiVxS80qdi0wOvHltBcSoZtRC97LngEZEkKC09k/edit?brid=hv-MPz2j8n_U1ZiCdslbyw&tab=t.0) 
 
 ## Table of Contents
 
