@@ -376,18 +376,19 @@ Here's a typical monthly deployment cost breakdown using the free tier:
 | **S3** | $1.07-2 | Stores forensic evidence | Asia Pacific (Singapore) |
 | **Athena** | $0.29-1 | SQL queries against forensic data | Asia Pacific (Singapore) |
 | **GuardDuty** | $1.80-2 | Detects security findings | Asia Pacific (Singapore) |
-| **CloudTrail** | Cost included with GuardDuty | Logs all actions | Asia Pacific (Singapore) |
+| **CloudTrail** | $0-1 | Logs all actions | Asia Pacific (Singapore) |
 | **CloudWatch** | $0-1 | Monitoring and dashboards | Asia Pacific (Singapore) |
 | **SNS** | $0-1 | Incident notifications | Asia Pacific (Singapore) |
 | **API Gateway** | $0.05-1 | Dashboard backend API | Asia Pacific (Singapore) |
 | **Cognito** | $0-1 | Dashboard authentication | Asia Pacific (Singapore) |
 | **CloudFront** | $0-1 | Dashboard CDN acceleration | Asia Pacific (Singapore) |
 | **EC2 (t3.micro)** | $0-1 | Optional analysis instances | Asia Pacific (Singapore) |
-| **Total** | **$3.30-$15** | | |
+| **KMS** | $1.12-2 | Key management | Asia Pacific (Singapore) |
+| **Total** | **$4.42-$18** | | |
 
 **Key Assumptions:**
 
-For our setup, it cost around **$3.30** for the whole month with this usage:
+For our setup, it cost around **$4.42** for the whole month with this usage:
 
 * Typical usage: 20-150 incidents per month
 * Dashboard served through CloudFront with WAF
