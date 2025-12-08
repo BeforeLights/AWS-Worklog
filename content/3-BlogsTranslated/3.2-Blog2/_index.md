@@ -142,12 +142,12 @@ Là một khách hàng, hướng dẫn này sẽ giúp bạn chạy một POC th
 Nếu có phản hồi về bài này, gửi bình luận ở Comments. Nếu có câu hỏi về bài này, hãy [liên hệ AWS Support](https://console.aws.amazon.com/support/home).  
  
 
-![Kyle Shields](../3.2-Blog2/image.png)
+![Kyle Shields](/images/3-BlogsTranslated/3.2-Blog2/image.png)
 Kyle Shields
 
 Kyle là Kiến trúc sư Giải pháp Chuyên gia Bảo mật tập trung phát hiện mối đe dọa và phản ứng sự cố tại AWS. Hiện nay, anh giúp khách hàng doanh nghiệp AWS vận hành Security Incident Response, cải thiện tư thế bảo mật.
 
-![Matt Meck](../3.2-Blog2/image-1.png)
+![Matt Meck](/images/3-BlogsTranslated/3.2-Blog2/image-1.png)
 Matt Meck
 
 Matt là chuyên gia bảo mật WW với 10 năm kinh nghiệm trong công nghệ AI, an ninh mạng, 3 năm tại AWS về Lĩnh vực Detection & Response. Đặt ở NY, yêu thích thiên nhiên, anh dành thời gian chơi bóng đá, trượt tuyết, chinh phục các đỉnh núi mới.
