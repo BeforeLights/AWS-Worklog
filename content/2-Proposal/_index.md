@@ -418,7 +418,7 @@ For our setup, it cost around **$3.30** for the whole month with this usage:
 | **Huỳnh An Khương** | Team Lead | Coordination, Architecture design, CDK, GuardDuty, Lambda, ETL Pipeline, Forensic analysis. | huynhankhuong0511@gmail.com |
 | **Mai Quốc Anh** | Member | Project Management (Jira), Alerting (Email/Telegram), Authentication, Dashboard design. | maiquocanh2608@gmail.com |
 | **Nguyễn Trần Minh Quân** | Member | Lambda, ETL Pipeline, Forensic analysis, Alerting (Slack). | nguyentranminhquanb@gmail.com |
-| **Lâm Gia Kiệt** | Member | Dashboard design/deployment, CDK, Cloudfront, API Gateway. | lamgiakiet2005@gmail.com |
+| **Lâm Gia Kiệt** | Member | Dashboard design/deployment, CDK, CloudFront, API Gateway. | lamgiakiet2005@gmail.com |
 | **Lê Trần Gia Huy** | Member | Lambda, Step Functions automation development, GuardDuty, Eventbridge, Policies and IAM roles. | huyletran188205@gmail.com |
 
 **Project Escalation Contact**
@@ -438,7 +438,7 @@ For our setup, it cost around **$3.30** for the whole month with this usage:
 | :--- | :--- |
 | **Huỳnh An Khương** | Coordination, Architecture design, CDK, GuardDuty, Lambda, ETL Pipeline, Forensic analysis |
 | **Mai Quốc Anh** | Project Management (Jira), Alerting (Email/Telegram), Authentication, Dashboard design, Proposal. |
-| **Lâm Gia Kiệt** | Dashboard development, CDK, CLoudfront, API Gateway, Gitlab workflow |
+| **Lâm Gia Kiệt** | Dashboard development, CDK, CloudFront, API Gateway, Gitlab workflow |
 | **Nguyễn Trần Minh Quân** | Lambda, ETL Pipeline, Forensic analysis, Alerting (Slack), Validation, Documentation |
 | **Lê Trần Gia Huy** | Lambda, Step Functions automation development, GuardDuty, Eventbridge, Policies and IAM roles. |
 
