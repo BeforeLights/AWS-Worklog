@@ -37,5 +37,5 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
           # Ensure this branch name matches your GitHub Pages configuration.
-          publish_branch: gh-pages # <--- Recommended to use 'gh-pages' or 'main/docs'
+          publish_branch: gh-pages
           force_orphan: true
