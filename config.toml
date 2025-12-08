@@ -1,4 +1,4 @@
-baseURL = "https://BeforeLights.github.io/AWS-Worklog/"
+baseURL = "https://beforelights.github.io/AWS-Worklog/"
 relativeURLs = true
 canonifyURLs = true
 
