@@ -58,13 +58,13 @@ Sau khi cân nhắc, SMC quyết định kiến trúc lại hoàn toàn hệ th�
 
 Vì hiệu suất và tính thực tiễn, hệ thống sẽ loại bỏ các sự kiện cũ. Ví dụ, giá giao dịch cuối cùng (LTP) của mã chứng khoán XYZ là 100, 101, 102 lần lượt tại T1, T2, T3, thì hệ thống có thể loại bỏ giá 100 và 101 để hiển thị trực tiếp giá 102\. Người dùng chủ yếu quan tâm đến giá hiện tại hơn các giá cũ khi kiểm tra LTP.
 
-![alt text](../3.1-Blog1//image.png)
+![alt text](/images/3-BlogsTranslated/3.1-Blog1/image.png)
 
 Hình 1 – Giá giao dịch cuối cùng
 
 Tuy nhiên, giá trị lịch sử rất là quan trọng cho việc phân tích như đỉnh/thấp trong 12 tuần, 52 tuần, hoặc xem danh sách tổng hợp lệnh.
 
-![alt text](../3.1-Blog1/image-1.png)
+![alt text](/images/3-BlogsTranslated/3.1-Blog1/image-1.png)
 
 Hình 2 – Danh sách giá từ cao xuống thấp
 
@@ -73,7 +73,7 @@ Vì vậy, giải pháp cần một chế độ thời gian thực cho dữ li�
 * [Amazon ElastiCache](https://aws.amazon.com/elasticache/) để cache và phản chiếu packet dữ liệu ghi nhận mới nhất, truy xuất nhanh  
 * [Amazon RDS PostgreSQL](https://aws.amazon.com/rds/postgresql/) cho lưu trữ dài hạn và đối chiếu batch
 
-![alt text](../3.1-Blog1/image-2.png)
+![alt text](/images/3-BlogsTranslated/3.1-Blog1/image-2.png)
 
 Hình 3 – Ghi lại và đối chiếu giá
 
@@ -83,7 +83,7 @@ Do khối lượng dữ liệu thị trường lớn, hệ thống xử lý đa 
 
 Một thách thức là đảm bảo thứ tự xử lý đúng. Nếu XYZ được update hai lần một giây—M1 (giá lên 100\) và M2 (giá lên 101\) —mà M2 xử lý trước M1 sẽ gây lỗi lớn. Để xử lý, hệ thống thêm thành phần thời gian tùy biến (custom chronological component) trước khi dữ liệu trả về giao diện người dùng.
 
-![alt text](../3.1-Blog1/image-3.png)
+![alt text](/images/3-BlogsTranslated/3.1-Blog1/image-3.png)
 
 Hình 4 – Sắp xếp dữ liệu theo thứ tự thời gian
 
@@ -112,7 +112,7 @@ Trong giờ thị trường, hàng nghìn nhà giao dịch đồng thời cố g
 
 Để đảm bảo độ tin cậy của hệ thống phát sóng, SMC đã triển khai một công cụ tùy chỉnh sử dụng LGTM stack để giám sát và quan sát toàn diện, kết hợp bốn công cụ chính: [Loki](https://grafana.com/oss/loki/) cho nhật ký, [Grafana](https://grafana.com/docs/grafana/latest/panels-visualizations/visualizations/) để trực quan hóa, [Tempo](https://grafana.com/oss/tempo/) để theo dõi và [Mimir](https://grafana.com/oss/mimir/) for metrics. cho các số liệu. Điều này được tích hợp với một hệ thống thông báo và quản lý sự cố tập trung bằng cách sử dụng [AWS Systems Manager Incident Manager](https://docs.aws.amazon.com/incident-manager/latest/userguide/what-is-incident-manager.html) để nhanh chóng giảm thiểu và phục hồi từ các sự cố ảnh hưởng đến các ứng dụng được lưu trữ trên AWS.
 
-![alt text](../3.1-Blog1/image-4.png)
+![alt text](/images/3-BlogsTranslated/3.1-Blog1/image-4.png)
 
 Hình 5 – Trình quản lý sự cố tích hợp
 
@@ -126,7 +126,7 @@ SMC đã sử dụng Fortinet Firewall để thu nạp dữ liệu multicast qua
 
 Cách định cấu hình [FortiGate SD-WAN](https://docs.fortinet.com/document/fortigate/7.4.0/administration-guide/504287/sd-wan-designs-and-architectures) nằm ngoài phạm vi thảo luận của bài đăng này, nhưng có thể kiểm tra chi tiết đầy đủ [tại đây](https://aws.amazon.com/blogs/apn/how-to-quickly-and-securely-connect-to-aws-using-fortinet-sd-wan/).
 
-![alt text](../3.1-Blog1/image-5.png)
+![alt text](/images/3-BlogsTranslated/3.1-Blog1/image-5.png)
 
 Hình 6 – Kiến trúc hệ thống phát sóng
 
@@ -134,7 +134,7 @@ Hình 6 – Kiến trúc hệ thống phát sóng
 
 Hệ thống mới được thiết kế của SMC trong AWS hiện có thể xử lý hàng chục nghìn người dùng đồng thời. Nó có thể xử lý hơn 100K tin nhắn mỗi giây từ nhiều sàn giao dịch chứng khoán với thời gian ngừng hoạt động bằng không. AWS cho phép SMC mở rộng quy mô nền tảng của họ để đáp ứng nhu cầu kinh doanh gia tăng trong giờ cao điểm, dẫn đến hiệu suất tốt hơn và độ trễ thấp hơn (cải thiện khoảng 60%) và thu nhỏ quy mô liền mạch sau giờ làm việc để tiết kiệm chi phí.
 
-![alt text](../3.1-Blog1/image-6.png)
+![alt text](/images/3-BlogsTranslated/3.1-Blog1/image-6.png)
 
 Hình 7 – Các chỉ số độ trễ hệ thống
 
@@ -148,31 +148,31 @@ Hành trình của SMC từ nền tảng phát sóng on-premises sang nền tả
 
 ### **Về các tác giả﻿**
 
-**![Abhishek Sarolia](../3.1-Blog1/image-7.png)**
+**![Abhishek Sarolia](/images/3-BlogsTranslated/3.1-Blog1/image-7.png)**
 
 ### Abhishek Sarolia
 
 Abhishek Sarolia là Kiến trúc sư Giải pháp cấp cao tại AWS. Anh làm việc với người dùng AWS để giải quyết các thách thức kinh doanh của họ bằng cách thiết kế các giải pháp an toàn, hiệu suất cao và khả năng mở rộng sử dụng các công nghệ điện toán đám mây mới nhất. Anh có niềm đam mê với công nghệ và thích xây dựng, thử nghiệm các dự án về AI/ML và IoT. Ngoài công việc, anh yêu thích du lịch, đọc sách phi hư cấu và dành thời gian cho gia đình.
 
-![Abhishek Chawla](../3.1-Blog1/image-8.png)
+![Abhishek Chawla](/images/3-BlogsTranslated/3.1-Blog1/image-8.png)
 
 ### Abhishek Chawla (Khách mời)
 
 Abhishek Chawla là Giám đốc Sản phẩm và Công nghệ Tập đoàn (CPTO) tại SMC Global Securities, nơi anh lãnh đạo chiến lược công nghệ và sản phẩm cho nhiều đơn vị kinh doanh như môi giới dịch vụ đầy đủ (SMC), môi giới môi giới chiết khấu (Stoxkart), quản lý tài sản và phân phối. Với gần hai thập kỷ kinh nghiệm trong các lĩnh vực fintech, edtech, chăm sóc sức khỏe, và du lịch, Abhishek đã thúc đẩy những chuyển đổi kỹ thuật số quy mô lớn bằng cách hiện đại hóa hạ tầng, xây dựng nền tảng cloud-native và mở rộng các nhóm kỹ thuật hiệu suất cao. Anh làm việc chặt chẽ với các CEO để đảm bảo các sáng kiến công nghệ phù hợp với mục tiêu kinh doanh, tạo ra tác động đo lường được thông qua đổi mới, hiệu quả và lấy khách hàng làm trọng tâm.
 
-![Kartik Manimuthu](../3.1-Blog1/image-9.png)
+![Kartik Manimuthu](/images/3-BlogsTranslated/3.1-Blog1/image-9.png)
 
 ### Kartik Manimuthu (Khách mời)
 
 Kartik Manimuthu là Giám đốc Kỹ thuật Đám mây tại SMC Global Securities. Với niềm đam mê giải quyết các bài toán kinh doanh phức tạp bằng công nghệ, anh dẫn dắt nhóm kỹ thuật thiết kế các giải pháp sáng tạo, vững chắc giúp thúc đẩy chuyển đổi số của công ty. Kartik chuyên về chuyển đổi lên cloud, hiện đại hóa hạ tầng doanh nghiệp và xây dựng nền tảng có thể mở rộng phù hợp với mục tiêu kinh doanh. Ngoài văn phòng, anh thích khám phá công nghệ mới và đọc sách.
 
-![Digvijay](../3.1-Blog1/image-10.png)
+![Digvijay](/images/3-BlogsTranslated/3.1-Blog1/image-10.png)
 
 ### Digvijay (Khách mời)
 
 Digvijay là Giám đốc Kỹ thuật tại SMC, một công ty môi giới hàng đầu, nơi anh đã dẫn dắt chiến lược công nghệ và đổi mới sản phẩm trong hai năm qua. Với hơn 10 năm kinh nghiệm trong ngành phần mềm, Digvijay có chuyên môn sâu về xây dựng hệ thống có khả năng mở rộng và lãnh đạo các nhóm kỹ thuật hiệu suất cao. Trước khi gia nhập SMC, Digvijay từng giữ các vị trí kỹ thuật chủ chốt tại Microsoft và Expedia, đóng góp vào các nền tảng lớn phục vụ khách hàng. Quản lý của anh kết hợp nền tảng kỹ thuật vững chắc với hiểu biết sâu về ngành dịch vụ tài chính.
 
-![Avanish Yadav](../3.1-Blog1/image-11.png)
+![Avanish Yadav](/images/3-BlogsTranslated/3.1-Blog1/image-11.png)
 
 ### Avanish Yadav
 
