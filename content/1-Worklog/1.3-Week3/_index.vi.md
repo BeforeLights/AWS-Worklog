@@ -1,59 +1,30 @@
 ---
-title: "Worklog Tuần 3"
-date: "2025-09-09"
-weight: 1
+title: "Nhật ký Tuần 3"
+date: "2025-09-22"
+weight: 3
 chapter: false
 pre: " <b> 1.3. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+
+### Mục tiêu Tuần 3:
+*   Học quy trình VM Import/Export để di chuyển máy ảo on-premises lên AWS.
+*   Triển khai ứng dụng web đa tầng (FCJ Management) với tính sẵn sàng cao (High Availability).
+*   Thực hiện Auto Scaling Groups và Application Load Balancers để tăng khả năng phục hồi.
+*   Hiểu cách sử dụng AWS CLI nâng cao cho các tác vụ import và cấu hình IAM role.
+
+### Các nhiệm vụ thực hiện trong tuần:
+| Ngày | Nhiệm vụ                                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo                        |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
+| 2   | - Hoàn thành **Understanding Research Methods** trên Coursera cho môn học khác của tôi **(ENW493c)**| 22/09/2025 | 22/09/2025      | 
+| 3   | - Chưa thể truy cập **Lightsail** hiện tại nên tôi bỏ qua <br> - Hoàn thành **Research Methodologies** trên Coursera **(ENW493c)** <br> - Hoàn thành MOOC **Giáo dục và Phát triển nguồn nhân lực số** trên Coursera **(Chương trình KS57)** | 23/09/2025 | 23/09/2025      | |
+| 4   | - **Hoàn thành Imported/Exported VM đầu cuối giữa VMware Workstation và Amazon EC2.** <br>&emsp;+ Tạo một **máy ảo Ubuntu** sử dụng **VMware Workstation** và cấu hình **OpenSSH** để truy cập từ xa bên trong hệ điều hành khách. <br>&emsp;+ Xuất VM từ **VMware Workstation** dưới dạng gói **OVF/VMDK** để chuẩn bị di chuyển. <br>&emsp;+ Tạo một **S3 import bucket** trong **AWS Management Console** và tải tệp **VMDK** từ máy cục bộ lên **Amazon S3**. <br>&emsp;+ Cài đặt và cấu hình **AWS CLI** trên máy trạm, sau đó tạo **vmimport IAM role** (trust policy + permissions) sử dụng **aws iam create-role** và **aws iam put-role-policy**. <br>&emsp;+ Sử dụng **aws ec2 import-image** từ **AWS CLI** để chuyển đổi đối tượng VMDK trong S3 thành một **AMI** (**CẢNH BÁO!!!: Sử dụng các phiên bản LTS 5.x cũ hơn.**), sau đó khởi chạy một **EC2 instance** từ AMI đã import trong **EC2 console**. <br>&emsp;+ Tạo một **S3 export bucket** và cấu hình **bucket ACL** của nó trong **S3 console** để tài khoản dịch vụ **vm-import-export@amazon.com** có thể ghi các hình ảnh VM đã xuất. <br>&emsp;+ Chạy **aws ec2 create-instance-export-task** từ **AWS CLI** để xuất một **EC2 instance/AMI** sang S3 export bucket dưới dạng hình ảnh VM để tái sử dụng trong **VMware** hoặc các trình ảo hóa khác. | 24/09/2025 | 24/09/2025 | [Installing or updating to the latest version of the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) <br><br> [Authenticating using IAM user credentials for the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-authentication-user.html) <br><br> [VM Import/Export Requirements](https://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#vmimport-operating-systems) <br><br> [VIRTUAL MACHINE (VM) IMPORT/EXPORT – AWS Study Group](https://000014.awsstudygroup.com/) <br><br> [VM Import/Export – What it is and capabilities](https://docs.aws.amazon.com/vm-import/latest/userguide/what-is-vmimport.html) <br><br> [VM Import/Export Requirements and supported formats](https://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html) <br><br> [Import a VM to Amazon EC2 as an image using VM Import/Export](https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html) <br><br> [Export an EC2 instance as a VM using VM Import/Export](https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html) <br><br> [Required permissions for VM Import/Export (vmimport role)](https://docs.aws.amazon.com/vm-import/latest/userguide/required-permissions.html) |
+| 5   | **Thiết kế và triển khai ngăn xếp ứng dụng quản lý FCJ trên AWS sử dụng EC2, RDS, và Application Load Balancer.**<br>&emsp;+ Xem lại các mục tiêu workshop **FCJ Management with Auto Scaling Group** và kiến trúc tổng thể để hiểu các thành phần AWS cần thiết và luồng lưu lượng truy cập.<br>&emsp;+ Xây dựng **cơ sở hạ tầng mạng** bằng cách tạo một **VPC** riêng, các subnet công khai, một **Internet Gateway**, và cấu hình route tables để truy cập internet cho ứng dụng FCJ.<br>&emsp;+ Khởi chạy một **máy chủ ứng dụng FCJ EC2** từ Amazon Linux/Ubuntu AMI, gắn một security group với các quy tắc HTTP/SSH, và xác minh kết nối cơ bản qua IP công khai.<br>&emsp;+ Cài đặt và cấu hình **Node.js**, **npm**, và **PM2** trên EC2 instance, sao chép mã nguồn ứng dụng **FCJ Management**, và thiết lập nó như một quy trình PM2 được quản lý để đảm bảo khả năng phục hồi.<br>&emsp;+ Cung cấp một **Amazon RDS** instance cho cơ sở dữ liệu FCJ, chọn engine và loại instance cần thiết, cấu hình networking/security groups, và kích hoạt kết nối từ FCJ EC2 instance.<br>&emsp;+ Khởi tạo **lược đồ cơ sở dữ liệu FCJ** và tải dữ liệu mẫu bằng cách chạy các tập lệnh SQL để ứng dụng có thể thực hiện các thao tác CRUD đầu cuối trong quá trình thử nghiệm.<br>&emsp;+ Xác minh kết nối toàn bộ ngăn xếp bằng cách khởi động ứng dụng FCJ trên EC2, kết nối với RDS, và xác nhận rằng các tính năng cốt lõi hoạt động qua HTTP trước khi giới thiệu bất kỳ cân bằng tải hoặc mở rộng nào. | 25/09/2025 | 26/09/2025 | [Deploying FCJ Management with Auto Scaling Group – AWS Study Group](https://000006.awsstudygroup.com/)<br><br>[Preparation - Deploying FCJ Management with Auto Scaling Group](https://000006.awsstudygroup.com/2-preparation/)<br><br>[Deploy Web Server](https://000006.awsstudygroup.com/2-preparation/2.5-deploy-web-server/)<br><br>[Launch a Database Instance with RDS](https://000006.awsstudygroup.com/2-preparation/2.3-launch-db-instance/)<br><br>[Setup data for Database](https://000006.awsstudygroup.com/2-preparation/2.4-add-data-to-db/) |
+| 6   | **Triển khai tính sẵn sàng cao và tự động mở rộng (auto scaling) cho ứng dụng Quản lý FCJ sử dụng Launch Templates, ALB, và nhiều chiến lược mở rộng.**<br>&emsp;+ Tạo một **AMI** từ FCJ EC2 instance đã cấu hình và xây dựng một **EC2 Launch Template** ghi lại AMI ID, loại instance, networking, security groups, và user data cho các lần triển khai lặp lại.<br>&emsp;+ Cấu hình một **Application Load Balancer** và **Target Group**, đăng ký các instance FCJ làm mục tiêu, và xác thực health checks cũng như định tuyến qua tên DNS của ALB.<br>&emsp;+ Thiết lập một **EC2 Auto Scaling Group (ASG)** sử dụng Launch Template, gắn nó vào Target Group, và xác nhận rằng các instance mới tham gia ALB và phục vụ lưu lượng truy cập chính xác.<br>&emsp;+ Triển khai **mở rộng thủ công** bằng cách điều chỉnh công suất mong muốn của ASG, quan sát các instance FCJ mới khởi chạy, và xác thực phân phối tải và trạng thái sức khỏe qua ALB.<br>&emsp;+ Cấu hình các hành động **mở rộng theo lịch trình** để tự động tăng dung lượng trong một khoảng thời gian "cao điểm" xác định và giảm sau đó, sau đó kiểm tra xem lịch trình đã thực thi như mong đợi chưa.<br>&emsp;+ Triển khai **mở rộng động (target‑tracking)** dựa trên các số liệu như mức sử dụng CPU hoặc số lượng yêu cầu, chạy kiểm tra tải qua ALB, và quan sát hành vi tự động mở rộng và thu hẹp.<br>&emsp;+ Chuẩn bị **các chỉ số CloudWatch tùy chỉnh** cho **mở rộng dự đoán**, tạo chính sách mở rộng dự đoán trên ASG, và xem lại biểu đồ dự báo so với công suất thực tế để hiểu cách các quyết định mở rộng trong tương lai được tạo ra.<br>&emsp;+ Thực hiện kiểm tra đầu cuối của tất cả các chế độ mở rộng (thủ công, theo lịch trình, động, dự đoán), giám sát các sự kiện vòng đời và số liệu instance, và ghi lại các cân nhắc về chi phí cho tài nguyên EC2, RDS, và ALB. | 26/09/2025 | 26/09/2025      | [Create Launch Template](https://000006.awsstudygroup.com/3-create-launch-template/)<br><br>[Setting Up Load Balancer](https://000006.awsstudygroup.com/4-setup-load-balancer/)<br><br>[Create Auto Scaling Group](https://000006.awsstudygroup.com/6-create-auto-scaling-group/)<br><br>[Test - Deploying FCJ Management with Auto Scaling Group](https://000006.awsstudygroup.com/5-test/)<br><br>[Test solutions - Deploying FCJ Management with Auto Scaling Group](https://000006.awsstudygroup.com/7-test-solutions/)<br><br>[Read metrics of predictive scaling solution](https://000006.awsstudygroup.com/7-test-solutions/7.4-test-predictive-scaling-solution/) |
 
 
-### Mục tiêu tuần 3:
-
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
-
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
-
-### Kết quả đạt được tuần 3:
-
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
+### Kết quả đạt được Tuần 3:
+*   Đã import thành công một máy ảo Ubuntu cục bộ vào AWS dưới dạng AMI sử dụng vai trò `vmimport` và AWS CLI.
+*   Triển khai Ứng dụng Quản lý FCJ với kiến trúc VPC an toàn (Subnet Công khai/Riêng tư).
+*   Cấu hình một Auto Scaling Group phía sau ALB, chứng minh khả năng mở rộng (scale-out) khi nhu cầu tăng đột biến.
+*   Xác minh kết nối cơ sở dữ liệu giữa các instance EC2 và lớp cơ sở dữ liệu RDS an toàn bên trong các subnet riêng tư.
 

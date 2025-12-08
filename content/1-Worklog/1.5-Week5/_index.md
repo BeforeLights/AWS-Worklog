@@ -7,6 +7,10 @@ pre: " <b> 1.5. </b> "
 ---
 
 ### Week 5 Objectives:
+*   Set up a Hybrid DNS environment using Route 53 Resolver Endpoints (Inbound/Outbound).
+*   Integrate AWS Managed Microsoft AD with on-premises simulations via RD Gateway.
+*   Gain proficiency in reducing manual toil by performing core tasks via AWS CLI.
+*   Translate technical blog posts to deepen understanding of cloud concepts.
 
 ### Tasks to be carried out this week:
 | Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
@@ -17,5 +21,8 @@ pre: " <b> 1.5. </b> "
 | 5   | Translated **Blog 3** | 09/10/2025 | 09/10/2025 | [**Blog 3**](3-BlogsTranslated/3.3-Blog3/_index.md) |
 | 6   | - Completed **Introduction to Research for Essay Writing** in Coursera **(ENW493c)** | 10/10/2025 | 10/10/2025 | |
 
-
 ### Week 5 Achievements:
+*   Successfully implemented a Hybrid DNS architecture enabling seamless resolution between on-premises and AWS (Route 53 Resolver).
+*   Gained hands-on experience with AWS Managed Microsoft AD and Remote Desktop Gateway integration.
+*   Demonstrated full proficiency in managing core AWS resources (VPC, EC2, S3, IAM) exclusively via CLI.
+*   Enhanced technical communication skills by translating three in-depth cloud engineering blog posts.

@@ -8,7 +8,10 @@ pre: " <b> 1.8. </b> "
 
 
 ### Week 8 Objectives:
-
+*   Learn the fundamentals of 3D web development using Three.js and WebGL.
+*   Prepare rigorously for the AWS Midterm Exam using practice tests and flashcards.
+*   Coordinate with the team to identify knowledge gaps and strengthen weak areas.
+*   Explore AWS Certified Solutions Architect question banks for deeper understanding.
 
 ### Tasks to be carried out this week:
 | Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
@@ -21,3 +24,7 @@ pre: " <b> 1.8. </b> "
 
 
 ### Week 8 Achievements:
+*   Successfully set up a development environment for Three.js and rendered initial 3D scenes.
+*   Collaborated to create a comprehensive study deck of 500 AWS Flashcards.
+*   Completed the Midterm Exam, identifying personal strengths and areas for improvement.
+*   Gained exposure to real-world solution architect scenarios through practice questions.

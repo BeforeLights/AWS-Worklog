@@ -1,59 +1,29 @@
 ---
-title: "Worklog Tuần 10"
-date: "2025-09-09"
-weight: 2
+title: "Nhật ký Tuần 10"
+date: "2025-11-10"
+weight: 10
 chapter: false
 pre: " <b> 1.10. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+
+### Mục tiêu Tuần 10:
+*   Củng cố quy trình Step Functions với callbacks, xử lý lỗi và các trạng thái song song.
+*   Thiết lập hệ thống cảnh báo Ứng phó Sự cố đa kênh (Telegram, Email).
+*   Cấu trúc dự án Ứng phó Sự cố trong Jira với các Epic và quyền sở hữu rõ ràng.
+*   Tối ưu hóa chi phí cảnh báo bằng cách chuyển từ SNS Email JSON sang Lambda-SES.
+
+### Các nhiệm vụ thực hiện trong tuần:
+| Ngày | Nhiệm vụ                                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo                        |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
+| 2   |**Mở rộng và làm cứng quy trình làm việc Step Functions với kích hoạt, tạm dừng/tiếp tục qua callbacks, xử lý lỗi mạnh mẽ, và kiểm tra song song.**<br>&emsp;+ Cập nhật **SubmitApplication Lambda** để bắt đầu thực thi state machine tự động với payload đúng, biến các bài kiểm tra thủ công thành điểm nhập quy trình làm việc hướng sự kiện.<br>&emsp;+ Triển khai **bước Chờ Phê duyệt dựa trên callback** sử dụng task tokens để các ứng dụng bị gắn cờ tạm dừng trong Step Functions cho đến khi một Lambda xem xét riêng biệt tiếp tục chúng với quyết định chấp nhận/từ chối.<br>&emsp;+ Thêm các khối **Retry** và **Catch** vào các trạng thái Task quan trọng để các lỗi Lambda/API tạm thời được thử lại với backoff trong khi các lỗi không thể phục hồi chảy vào các đường dẫn xử lý lỗi rõ ràng.<br>&emsp;+ Chuyển đổi các kiểm tra tuần tự thành một **trạng thái Parallel** để xác thực tên và địa chỉ chạy đồng thời, sau đó điều chỉnh logic Choice để diễn giải đầu ra song song kết hợp một cách chính xác.<br>&emsp;+ Kết thúc bằng cách khám phá **các tài nguyên Step Functions nâng cao** (quy trình làm việc chạy dài, trạng thái Map/Wait, và các mẫu chính thức) để lên kế hoạch cho các bước tiếp theo cho các mẫu điều phối sẵn sàng cho sản xuất. | 10/11/2025 | 10/11/2025      |[StartExecution – AWS Step Functions](https://docs.aws.amazon.com/step-functions/latest/apireference/API_StartExecution.html)<br><br>[Callback patterns with task tokens](https://docs.aws.amazon.com/step-functions/latest/dg/callback-task-sample-sqs.html)<br><br>[Handling errors in Step Functions workflows](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-error-handling.html)<br><br>[Parallel workflow state](https://docs.aws.amazon.com/step-functions/latest/dg/state-parallel.html)<br><br>[Tutorials and workshops for learning Step Functions](https://docs.aws.amazon.com/step-functions/latest/dg/learning-resources.html)|
+| 3   |**Xây dựng hệ thống gửi cảnh báo SNS nền tảng: Email/EmailJSON để gửi đến hộp thư đến, mã Lambda tùy chỉnh cho Telegram với thiết lập bot và trò chuyện nhóm dựa trên chủ đề, và tạo các phát hiện GuardDuty thử nghiệm.**<br>&emsp;+ Tạo một **SNS topic** (`SNSToTelegram`) và đăng ký **Email và EmailJSON** trực tiếp để các cảnh báo bảo mật tự động định tuyến đến hộp thư email của bạn mà không cần xử lý Lambda.<br>&emsp;+ Thiết lập một **Telegram bot** qua BotFather, lấy token bot, tạo một nhóm trò chuyện, bật tính năng **Topics**, và trích xuất **ID trò chuyện và ID luồng tin nhắn** để định tuyến cảnh báo có mục tiêu.<br>&emsp;+ Triển khai một **hàm Telegram Lambda** với token bot, ID trò chuyện, và ID luồng tin nhắn được lưu trữ dưới dạng **biến môi trường**, sau đó mã hóa hàm để phân tích tin nhắn SNS và chuyển tiếp chúng đến chủ đề Telegram.<br>&emsp;+ Cấu hình **SNS topic để kích hoạt Telegram Lambda** để các sự kiện bảo mật đến tự động gửi thông báo đến cả email và chủ đề trò chuyện nhóm Telegram cùng một lúc.<br>&emsp;+ Tạo **các phát hiện mẫu AWS GuardDuty** (Hơn 1000 emails... Đây là một sai lầm).| 11/11/2025 | 11/11/2025 ||
+| 4   |**Cấu trúc dự án Hệ thống Ứng phó Sự cố AWS trong Jira bằng cách xác định các epic cốt lõi, gán quyền sở hữu trên nhiều nhóm, và thiết lập nền tảng cho các quy trình xử lý sự cố.**<br>&emsp;+ Tạo **5 epic chính** trong Jira để ánh xạ quy trình ứng phó sự cố: Phát hiện mối đe dọa, Cảnh báo, Quy trình Ứng phó, Đường ống dữ liệu, và Thành phần Bảng điều khiển.<br>&emsp;+ Gán **quyền sở hữu epic cho các thành viên nhóm cá nhân** để mỗi khu vực có một người dẫn đầu rõ ràng chịu trách nhiệm cho phạm vi và việc giao hàng của nó.<br>&emsp;+ Tổ chức **cấu trúc và trách nhiệm nhóm** bằng cách căn chỉnh từng epic với bộ kỹ năng phù hợp (phát hiện mối đe dọa, cơ sở hạ tầng cảnh báo, điều phối quy trình làm việc, nhập dữ liệu, lập bảng điều khiển).<br>&emsp;+ Cấu hình **phân rã epic-thành-tác vụ** trong Jira để các nhiệm vụ phụ và vấn đề được gắn với epic cha của chúng, cho phép khả năng hiển thị nhóm và theo dõi burndown trên toàn hệ thống ứng phó sự cố.| 12/11/2025 | 12/11/2025 ||
+| 5   |**Tối ưu hóa hệ thống cảnh báo bằng cách thay thế đăng ký Email SNS bằng Lambda→SES để giảm chi phí, cho phép định dạng email tùy chỉnh, và tận dụng giới hạn gửi cao hơn của SES.**<br>&emsp;+ Phân tích **tác động giá cả SNS** từ các phát hiện mẫu GuardDuty và xác định rằng các đăng ký Email trực tiếp đang tạo ra các khoản phí không mong muốn về chi phí gửi SNS.<br>&emsp;+ Nghiên cứu **khả năng của AWS SES** và phát hiện ra nó cung cấp giới hạn gửi cao hơn và kiểm soát hoàn toàn định dạng email so với đăng ký Email SNS.<br>&emsp;+ Tạo một **hàm Lambda mới** để thay thế đăng ký Email SNS nhận tin nhắn SNS, phân tích các phát hiện GuardDuty, và gửi email HTML được định dạng qua **SES**.<br>&emsp;+ Triển khai **mẫu email tùy chỉnh** trong SES Lambda với HTML được tạo kiểu, siêu dữ liệu cảnh báo nhúng, chỉ báo mức độ nghiêm trọng, và chi tiết phát hiện GuardDuty để dễ đọc và hành động hơn.<br>&emsp;+ Cập nhật **cấu hình SNS topic** để kích hoạt cả Telegram Lambda và SES Lambda mới, loại bỏ đăng ký Email và giảm phí SNS trong khi duy trì việc gửi cảnh báo kênh đôi (Email + Telegram).| 13/11/2025 | 13/11/2025 ||
+| 6   | - Làm việc Freelance | 14/11/2025 | 14/11/2025 ||
 
 
-### Mục tiêu tuần 10:
-
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
-
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
-
-### Kết quả đạt được tuần 10:
-
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+### Kết quả đạt được Tuần 10:
+*   Đã cung cấp một state machine Step Functions mạnh mẽ với các mẫu callback, xử lý song song và khả năng phục hồi lỗi.
+*   Kiến trúc và triển khai hệ thống gửi cảnh báo nhạy cảm về chi phí, đa kênh (Telegram + SES Email).
+*   Thiết lập khung Quản lý Dự án có cấu trúc trong Jira, căn chỉnh vai trò nhóm với các Epic kỹ thuật.
+*   Giảm thiểu thành công các chi phí SNS không mong muốn bằng cách tái cấu trúc cơ chế gửi email sử dụng AWS SES.

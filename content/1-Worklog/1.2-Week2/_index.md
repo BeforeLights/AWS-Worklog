@@ -8,14 +8,10 @@ pre: " <b> 1.2. </b> "
 
 
 ### Week 2 Objectives:
-
-* Complete Module 3 & 4
-* Help team members get up to speed
-* Discuss workshop ideas
-* Do first optional research: AWS Well Architected Framework
-* Check out AWS Advanced Networking - Specialty Study Guide
-* Check out AWS Microsoft Workload
-* Check out AWS Skill Builder
+*   Master EC2 instance types, purchasing options, and placement groups.
+*   Implement advanced IAM policies for region restriction and MFA enforcement.
+*   Host a static website on Amazon S3 with access logging and versioning.
+*   Accelerate content delivery using Amazon CloudFront and route domains with Route 53.
 
 ### Tasks to be carried out this week:
 | Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
@@ -25,31 +21,8 @@ pre: " <b> 1.2. </b> "
 | 4   | <br> - Looked into **Cloud 9** IDE, on what it is about (Can't use it because I don't have access to it.)![Cloud9](/images/1-Worklog/Week2/cloud9.png) - Information about **S3**: <br>&emsp; + Know the difference between **S3 Bucket** and **S3 Object** <br>&emsp; + Know about the **storage classes** and others. <br> - **Create an S3 bucket** and **host a static website**: <br>&emsp; + Created an **S3 bucket** and **uploaded the data** <br>&emsp; + Enabled **Static website hosting** and unchecked **Block all public access** <br>&emsp; + Changed the **bucket permission settings** and made **objects public using ACL** <br>&emsp; + Successfully accessed the **static website** | 17/09/2025 | 17/09/2025 | [How to migrate from AWS Cloud9 to AWS IDE Toolkits or AWS CloudShell](https://aws.amazon.com/blogs/devops/how-to-migrate-from-aws-cloud9-to-aws-ide-toolkits-or-aws-cloudshell/) <br><br> [Get started with AWS Cloud 9](https://000049.awsstudygroup.com/) <br><br> [Starting with Amazon S3](https://000057.awsstudygroup.com/) |
 | 5   | - Accelerate Static Websites with **Cloudfront**: <br>&emsp; + **Blocked** all **public access** <br>&emsp; + Created and configured a **Cloudfront distribution** (The new UI doesn't let you choose the **Default root object** and **Price class** on creating, to change this, select your **distribution**, click on the **General** tab, find **Settings** and click **Edit**, then you can see the missing options there.) <br>&emsp; + **Successfully** accessed the **website** <br>&emsp; + **Checked** the **loading time** by inspecting the website, the flow would be: <br> **Inspect -> Network -> Refresh page** <br> You can see the time at the far right of the **Cloudfront document** (for me it's 29ms), when you click on the **Cloudfront document**, you can see which PoP the website is being returned from ![PoP location](/images/1-Worklog/Week2/pop_location.png) It's **HKG1-P2** (Hong Kong) for me <br> - Bucket Versioning: <br>&emsp; + Read and enabled **Bucket Versioning** <br>&emsp; + Tested it by **editing** the **index.html** file and uploading it onto the **S3 bucket** and checking **Cloudfront** <br> - Moving objects from an S3 to another: <br>&emsp; + Created a new **S3 Bucket** <br>&emsp; + Calculated the **size** of the **entire bucket** to compare **after moving** <br>&emsp; + **Successfully moved** the bucket <br>&emsp; + Calculated the **size** to make sure we didn't lose any data <br> Out of curiosity, I tried changing the **Origin domain** of the **Cloudfront distribution**, added a **Bucket policy** in permissions and enabled **Static website hosting** on the new **S3 Bucket** and it works wonder! <br> - Successfully replicated **objects** inside of a **S3 Bucket** to another **region**. <br> [**Notes and Best Practices**](https://000057.awsstudygroup.com/12-notes/)  | 18/09/2025 | 18/09/2025 | [Starting with Amazon S3](https://000057.awsstudygroup.com/) <br><br> [Restrict access to an Amazon S3 origin](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html) <br><br> [AWS Global Infrastructure](https://aws.amazon.com/about-aws/global-infrastructure/#:~:text=The%20AWS%20Cloud%20in%20North,two%20Regional%20Edge%20Cache%20locations.) <br><br> - Expenses: <br><br>&emsp; + [Amazon S3 Price](https://aws.amazon.com/s3/pricing/) <br><br>&emsp; +	[Amazon CloudFront Pricing](https://aws.amazon.com/cloudfront/pricing/)	<br><br>&emsp; + [Amazon Price](https://aws.amazon.com/pricing/)	|
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+### Week 2 Achievements:
+*   Deployed a static website on S3 with public access blocking configured correctly.
+*   Created IAM policies that restrict operations to specific regions (e.g., ap-southeast-1) for compliance.
+*   Configured a CloudFront distribution with OAC (Origin Access Control) to securely serve private S3 content.
+*   Enabled S3 Versioning and replicated data to a secondary region for disaster recovery testing.

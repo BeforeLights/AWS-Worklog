@@ -1,59 +1,28 @@
 ---
-title: "Worklog Tuần 7"
-date: "2025-09-09"
-weight: 1
+title: "Nhật ký Tuần 7"
+date: "2025-10-20"
+weight: 7
 chapter: false
 pre: " <b> 1.7. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+### Mục tiêu Tuần 7:
+*   Triển khai và cấu hình Amazon FSx for Windows File Server tích hợp với AD.
+*   Thực hiện các tác vụ quản trị lưu trữ: chống trùng lặp (deduplication), hạn ngạch (quotas), và shadow copies.
+*   Đánh giá hiệu suất hệ thống tệp sử dụng DiskSpd và giám sát qua CloudWatch.
+*   Củng cố kiến thức kiến trúc đám mây thông qua học tập trò chơi hóa (AWS Card Clash).
 
-### Mục tiêu tuần 7:
+### Các nhiệm vụ thực hiện trong tuần:
+| Ngày | Nhiệm vụ                                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo                        |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
+| 2   |- Bận việc bên ngoài <br>- Họp nhóm trực tuyến để phân chia công việc. | 20/10/2025 | 20/10/2025 ||
+| 3   |**Cung cấp và cấu hình môi trường lab Amazon FSx for Windows File Server với nhiều hệ thống tệp và chia sẻ SMB để thử nghiệm sau này.**<br>&emsp;+ Thiết lập **môi trường lab FSx qua AWS CloudFormation**, tạo VPC, subnets, security groups, và Windows management instances cần thiết cho workshop.<br>&emsp;+ Tạo cả **hệ thống tệp SSD và HDD Multi-AZ FSx for Windows**, chọn kích thước lưu trữ phù hợp, dung lượng thông lượng, subnet riêng tư, và tích hợp AWS Managed Microsoft AD.<br>&emsp;+ Sử dụng Windows management instance để cấu hình **các chia sẻ tệp SMB mới trên các volume FSx**, gán thư mục ứng dụng/dữ liệu và quyền chia sẻ lab cho phép cho các kịch bản sau này.<br>&emsp;+ Xác minh kết nối cơ bản từ Windows instance đến **tên DNS và các chia sẻ FSx**, đảm bảo môi trường đã sẵn sàng cho các bài tập hiệu suất và quản lý dữ liệu. | 21/10/2025 | 21/10/2025 |[Amazon FSx for Windows File Server - AWS Study Group](https://000025.awsstudygroup.com)<br><br>[Getting started with Amazon FSx for Windows File Server](https://docs.aws.amazon.com/fsx/latest/WindowsGuide/getting-started.html)<br><br>[Accessing data using file shares - Amazon FSx for Windows File Server](https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-file-shares.html)|
+| 4   |**Triển khai kiểm tra hiệu suất, giám sát, và các tính năng bảo vệ dữ liệu nâng cao trên Amazon FSx for Windows File Server.**<br>&emsp;+ Chạy **các bài kiểm tra hiệu suất dựa trên DiskSpd** từ một Windows instance đối với ổ đĩa FSx được ánh xạ để đo thông lượng đọc/ghi dưới tải.<br>&emsp;+ Giám sát **các chỉ số CloudWatch FSx** (thông lượng, IOPS, độ trễ, kết nối) từ FSx console để tương quan hiệu suất quan sát được với dung lượng đã cấu hình.<br>&emsp;+ Bật **chống trùng lặp dữ liệu (data deduplication)** trên hệ thống tệp FSx qua giao diện PowerShell FSx từ xa, tạo lịch trình tối ưu hóa hàng ngày, và xác thực trạng thái dedup và thống kê tiết kiệm.<br>&emsp;+ Bật **shadow copies** cho volume FSx, tăng giới hạn lưu trữ, tạo một snapshot theo yêu cầu, và xác nhận rằng tệp “Previous Versions” có thể được khôi phục từ Windows Explorer.<br>&emsp;+ Thực hành **kiểm soát của quản trị viên đối với phiên người dùng và tệp đang mở** sử dụng Shared Folders và FSx PowerShell cmdlets, bao gồm buộc đóng một tệp thử nghiệm đang hoạt động để ngắt I/O của máy khách.| 22/10/2025 | 22/10/2025 |[FSx for Windows File Server performance](https://docs.aws.amazon.com/fsx/latest/WindowsGuide/performance.html)<br><br>[Protecting your data with shadow copies](https://docs.aws.amazon.com/fsx/latest/WindowsGuide/shadow-copies-fsxW.html)<br><br>[Administering FSx for Windows file systems](https://docs.aws.amazon.com/fsx/latest/WindowsGuide/administering-file-systems.html)|
+| 5   |- Chơi các trận đấu **AWS Card Clash** với đồng đội để đặt đúng **thẻ dịch vụ AWS** vào các sơ đồ kiến trúc đám mây mẫu và xem cách các dịch vụ kết nối.<br>&emsp;- Thảo luận qua từng vòng để giải thích bằng ngôn ngữ đơn giản những gì các dịch vụ chính làm (ví dụ, cái nào xử lý tính toán, lưu trữ, hoặc mạng) để mọi người có thể nhớ chúng dễ dàng hơn.<br>&emsp;- Tải **ghi chú bài giảng và liên kết học tập AWS** vào **NotebookLM** và sử dụng nó để làm nổi bật các ý chính và tạo giải thích ngắn cho các chủ đề vẫn cảm thấy khó hiểu.<br>&emsp;- Nhờ **NotebookLM** tạo các câu hỏi ôn tập và tóm tắt ngắn từ những ghi chú đó để việc ôn tập giữa kỳ giống như một buổi hỏi đáp có hướng dẫn thay vì chỉ đọc lại mọi thứ.<br>&emsp;- Sử dụng **Gemini** để biến các chủ đề giữa kỳ thành các câu đố thực hành nhỏ và flashcards, sau đó trả lời chúng để kiểm tra xem khu vực AWS nào vẫn cần ôn tập thêm.<br>&emsp;- Kiểm tra lại bất kỳ câu trả lời không rõ ràng nào bằng tài liệu học tập chính thức của AWS để đảm bảo các giải thích và câu trả lời trắc nghiệm khớp với cách các dịch vụ thực sự hoạt động. | 23/10/2025 | 23/10/2025 |[AWS Card Clash: Learn Cloud Architecture](https://aws.amazon.com/awstv/watch/3c8b7eb882c/)<br><br>[Introducing AWS Card Clash mobile](https://aws.amazon.com/blogs/training-and-certification/introducing-aws-card-clash-mobile-learn-aws-architecture-through-strateg/)|
+| 6   | **Cấu hình hạn ngạch, chia sẻ tính sẵn sàng cao, mở rộng dung lượng, dọn dẹp, và xem xét quy trình làm việc AWS CLI cho FSx for Windows.**<br>&emsp;+ Bật **hạn ngạch lưu trữ theo người dùng** trên hệ thống tệp FSx sử dụng giao diện PowerShell FSx từ xa, đặt giới hạn mặc định và cảnh báo, và thực thi hạn ngạch tùy chỉnh cho một người dùng cụ thể.<br>&emsp;+ Tạo một **chia sẻ SMB được mã hóa, khả dụng liên tục** cho khối lượng công việc SQL trên FSx, sử dụng thông tin xác thực từ AWS Secrets Manager và FSx PowerShell CLI để kích hoạt Continuous Availability.<br>&emsp;+ Mở rộng **thông lượng và dung lượng lưu trữ** của hệ thống tệp FSx từ console, tăng MB/s và tổng GiB trong khi cho phép FSx thực hiện tối ưu hóa trực tuyến trong nền.<br>&emsp;+ Xóa **toàn bộ môi trường lab FSx** bằng cách xóa ngăn xếp CloudFormation ban đầu và xác nhận rằng tất cả các tài nguyên liên quan đã bị chấm dứt để tránh chi phí phát sinh.<br>&emsp;+ Đọc phần **“Using the AWS CLI (reference)”** để hiểu cách tự động hóa các tác vụ FSx, AD, và liên quan với AWS CLI thay vì console.| 24/10/2025 | 24/10/2025 | [Managing storage quotas - Amazon FSx for Windows File Server](https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-user-quotas.html)<br><br>[Managing throughput and storage capacity](https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-throughput-capacity.html)<br><br>[One-time file system setup tasks using the Amazon FSx CLI](https://docs.aws.amazon.com/fsx/latest/WindowsGuide/one-time-admin-tasks.html)|
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
-
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
-
-### Kết quả đạt được tuần 7:
-
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+### Kết quả đạt được Tuần 7:
+*   Đã cung cấp và quản lý thành công môi trường máy chủ tệp Windows hiệu suất cao trên AWS sử dụng FSx.
+*   Thực hiện các tác vụ lưu trữ thiết yếu bao gồm Chống trùng lặp dữ liệu (tiết kiệm không gian) và Shadow Copies (cho phép khôi phục bởi người dùng).
+*   Thực thi quản trị thông qua hạn ngạch lưu trữ người dùng và giám sát sức khỏe hệ thống tệp qua CloudWatch.
+*   Nâng cao kiến thức đội nhóm về các dịch vụ và kiến trúc AWS thông qua các buổi học tập tương tác.

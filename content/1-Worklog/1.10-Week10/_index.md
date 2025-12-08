@@ -7,6 +7,10 @@ pre: " <b> 1.10. </b> "
 ---
 
 ### Week 10 Objectives:
+*   Harden Step Functions workflows with callbacks, error handling, and parallel states.
+*   Establish a multi-channel Incident Response alerting system (Telegram, Email).
+*   Structure the Incident Response project in Jira with clear Epics and ownership.
+*   Optimize alerting costs by migrating from SNS Email JSON to Lambda-SES.
 
 ### Tasks to be carried out this week:
 | Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
@@ -19,3 +23,7 @@ pre: " <b> 1.10. </b> "
 
 
 ### Week 10 Achievements:
+*   Delivered a robust Step Functions state machine with callback patterns, parallel processing, and error resilience.
+*   Architected and implemented a cost-effective, dual-channel (Telegram + SES Email) alert dispatch system.
+*   Established a structured Project Management framework in Jira, aligning team roles with technical Epics.
+*   Successfully mitigated unexpected SNS costs by refactoring the email delivery mechanism to use AWS SES.

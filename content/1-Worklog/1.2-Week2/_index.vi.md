@@ -1,59 +1,28 @@
 ---
-title: "Worklog Tuần 2"
-date: "2025-09-09"
-weight: 1
+title: "Nhật ký Tuần 2"
+date: "2025-09-15"
+weight: 2
 chapter: false
 pre: " <b> 1.2. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
 
-### Mục tiêu tuần 2:
+### Mục tiêu Tuần 2:
+*   Nắm vững các loại EC2 instance, tùy chọn mua và placement groups.
+*   Triển khai các chính sách IAM nâng cao để giới hạn khu vực và thực thi MFA.
+*   Lưu trữ website tĩnh trên Amazon S3 với ghi nhật ký truy cập và lập phiên bản.
+*   Tăng tốc phân phối nội dung sử dụng Amazon CloudFront và định tuyến tên miền với Route 53.
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+### Các nhiệm vụ thực hiện trong tuần:
+| Ngày | Nhiệm vụ                                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo                        |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
+| 2   | - Hoàn thành việc hạn chế **IAM** tạo **EC2** từ khu vực khác. (**Hạn chế sử dụng dịch vụ theo Khu vực AWS**) <br> - Học cách **phân tích yêu cầu tính toán** và chọn **họ instance** phù hợp. <br> - Khởi chạy các instance trong **cùng và khác họ** để kiểm tra **Chính sách IAM EC2** <br> - Học cách **hạn chế** một số **EBS volume** nhất định và thông tin chung về **các loại EBS volume** <br> - Kiểm tra chính sách bằng cách khởi chạy một **EC2** với **loại EBS volume** không được phép. <br> - Học cách **giới hạn quyền truy cập vào tài nguyên** bằng cách chỉ **cho phép truy cập từ các IP nhất định** <br> - Học cách giới hạn quyền **xóa tài nguyên theo khoảng thời gian** | 15/09/2025 | 15/09/2025      | [Amazon EC2 instance types](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html) <br><br> [Introduction to Amazon EC2](https://000004.awsstudygroup.com/) <br><br> [Amazon EC2 instance types](https://aws.amazon.com/ec2/instance-types/?nc1=h_ls) <br><br> [IAM policy testing with the IAM policy simulator](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_testing-policies.html) <br><br> [IAM Policy Simulator](https://policysim.aws.amazon.com/home/index.jsp?#)
+| 3   |- Tạo một **EC2** và **SSH vào nó** sử dụng **MobaXterm** và tạo một **S3 bucket** <br> - Tải lên tệp sử dụng **accesskey/secretaccesskey**: <br>&emsp; + Tạo một **IAM user với access key** <br>&emsp; + **Tải tệp lên** **S3 bucket** <br> - Tải lên tệp với **các vai trò đủ điều kiện** trên **EC2**: <br>&emsp; + Tạo một **role** cho **EC2** <br>&emsp; + **Tải tệp lên** **S3 bucket** thông qua **EC2 role**.| 16/09/2025 | 16/09/2025      | [Granting authorization for an application to access AWS services with an IAM role.](https://000048.awsstudygroup.com/)
+| 4   | <br> - Tìm hiểu về **Cloud 9** IDE, nó là gì (Không thể sử dụng vì tôi không có quyền truy cập.)![Cloud9](/images/1-Worklog/Week2/cloud9.png) - Thông tin về **S3**: <br>&emsp; + Biết sự khác biệt giữa **S3 Bucket** và **S3 Object** <br>&emsp; + Biết về **các lớp lưu trữ (storage classes)** và những thứ khác. <br> - **Tạo một S3 bucket** và **host một trang web tĩnh**: <br>&emsp; + Tạo một **S3 bucket** và **tải dữ liệu lên** <br>&emsp; + Bật **Static website hosting** và bỏ chọn **Block all public access** <br>&emsp; + Thay đổi **cài đặt quyền của bucket** và đặt **các đối tượng công khai bằng ACL** <br>&emsp; + Truy cập thành công **trang web tĩnh** | 17/09/2025 | 17/09/2025 | [How to migrate from AWS Cloud9 to AWS IDE Toolkits or AWS CloudShell](https://aws.amazon.com/blogs/devops/how-to-migrate-from-aws-cloud9-to-aws-ide-toolkits-or-aws-cloudshell/) <br><br> [Get started with AWS Cloud 9](https://000049.awsstudygroup.com/) <br><br> [Starting with Amazon S3](https://000057.awsstudygroup.com/) |
+| 5   | - Tăng tốc Trang web Tĩnh với **Cloudfront**: <br>&emsp; + **Chặn** tất cả **truy cập công khai** <br>&emsp; + Tạo và cấu hình một **Cloudfront distribution** (Giao diện mới không cho phép chọn **Default root object** và **Price class** khi tạo, để thay đổi, chọn **distribution** của bạn, nhấp vào tab **General**, tìm **Settings** và nhấp **Edit**, sau đó bạn có thể thấy các tùy chọn còn thiếu ở đó.) <br>&emsp; + Truy cập **thành công** vào **trang web** <br>&emsp; + **Kiểm tra** **thời gian tải** bằng cách kiểm tra trang web, luồng sẽ là: <br> **Inspect -> Network -> Refresh page** <br> Bạn có thể thấy thời gian ở phía xa bên phải của **tài liệu Cloudfront** (đối với tôi là 29ms), khi bạn nhấp vào **tài liệu Cloudfront**, bạn có thể thấy PoP nào đang trả về trang web ![PoP location](/images/1-Worklog/Week2/pop_location.png) Của tôi là **HKG1-P2** (Hong Kong) <br> - Bucket Versioning: <br>&emsp; + Đọc và bật **Bucket Versioning** <br>&emsp; + Kiểm tra nó bằng cách **chỉnh sửa** tệp **index.html** và tải nó lên **S3 bucket** rồi kiểm tra **Cloudfront** <br> - Di chuyển các đối tượng từ một S3 sang cái khác: <br>&emsp; + Tạo một **S3 Bucket** mới <br>&emsp; + Tính toán **kích thước** của **toàn bộ bucket** để so sánh **sau khi di chuyển** <br>&emsp; + **Di chuyển thành công** bucket <br>&emsp; + Tính toán **kích thước** để đảm bảo không mất dữ liệu nào <br> Vì tò mò, tôi đã thử thay đổi **Origin domain** của **Cloudfront distribution**, thêm một **Bucket policy** trong permissions và bật **Static website hosting** trên **S3 Bucket** mới và nó hoạt động tuyệt vời! <br> - Sao chép thành công **các đối tượng** bên trong một **S3 Bucket** sang **khu vực** khác. <br> [**Ghi chú và Các phương pháp tốt nhất**](https://000057.awsstudygroup.com/12-notes/)  | 18/09/2025 | 18/09/2025 | [Starting with Amazon S3](https://000057.awsstudygroup.com/) <br><br> [Restrict access to an Amazon S3 origin](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html) <br><br> [AWS Global Infrastructure](https://aws.amazon.com/about-aws/global-infrastructure/#:~:text=The%20AWS%20Cloud%20in%20North,two%20Regional%20Edge%20Cache%20locations.) <br><br> - Expenses: <br><br>&emsp; + [Amazon S3 Price](https://aws.amazon.com/s3/pricing/) <br><br>&emsp; +	[Amazon CloudFront Pricing](https://aws.amazon.com/cloudfront/pricing/)	<br><br>&emsp; + [Amazon Price](https://aws.amazon.com/pricing/)	|
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
-
-### Kết quả đạt được tuần 2:
-
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+### Kết quả đạt được Tuần 2:
+*   Đã triển khai một website tĩnh trên S3 với chặn truy cập công khai được cấu hình chính xác.
+*   Tạo các chính sách IAM giới hạn hoạt động trong các khu vực cụ thể (ví dụ: ap-southeast-1) để tuân thủ.
+*   Cấu hình một CloudFront distribution với OAC (Origin Access Control) để phục vụ nội dung S3 riêng tư một cách an toàn.
+*   Bật tính năng S3 Versioning và sao chép dữ liệu sang một khu vực phụ để thử nghiệm khôi phục sau thảm họa.

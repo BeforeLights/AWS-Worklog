@@ -9,8 +9,10 @@ pre: " <b> 1.4. </b> "
 
 
 ### Week 4 Objectives:
-- Complete Module 6
-- Started on proposal
+*   Build custom CloudWatch Dashboards to visualize logs and metrics.
+*   Implement cost optimization automation using Lambda and EventBridge.
+*   Perform heterogeneous database migration (MSSQL to MySQL) using AWS SCT.
+*   Finalize team project proposal and estimate resource costs.
 
 ### Tasks to be carried out this week:
 | Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
@@ -23,23 +25,7 @@ pre: " <b> 1.4. </b> "
 
 
 ### Week 4 Achievements:
-
-* Completed a comprehensive review of core database concepts including RDBMS, keys, indexes, partitioning, OLTP/OLAP, and AWS-specific database services.
-
-* Gained theoretical knowledge of the features and use cases for AWS RDS, Amazon Aurora (e.g., Backtrack, Global Database), Amazon Redshift (Data Warehouse for OLAP), and Amazon ElastiCache (caching with Redis/Memcached).
-
-* Database Migration: Attempted a complex database migration lab, demonstrating resourcefulness by:
-
-  *  Sourcing a custom MSSQL Database and installing necessary services on an EC2 instance due to broken lab guides.
-
-  *  Successfully migrating the custom MSSQL database to MySQL using the AWS Schema Conversion Tool (SCT).
-
-* Identified and addressed the issue of expired AWS credits by raising a support case.
-
-* Secured continuation of lab work by setting up an IAM User with admin privileges on a team member's account.
-
-* Formulated a proposal for the team's upcoming workshop with teammates.
-
-* Completed the translation of three blogs.
-
-* Attended the AI-Driven Development Life Cycle: Reimagining Software Engineering event.
+*   Designed and deployed a custom CloudWatch Dashboard to monitor application health and error rates.
+*   Developed a serverless cost-optimization solution using Lambda to automatically stop/start EC2 instances, integrated with Slack notifications.
+*   Successfully migrated a legacy MSSQL database to Amazon MySQL using the AWS Schema Conversion Tool (SCT), resolving compatibility issues.
+*   Collaborated with the team to finalize the capstone project proposal and secured admin access for all members.

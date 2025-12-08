@@ -1,58 +1,30 @@
 ---
-title: "Worklog Tuần 12"
+title: "Nhật ký Tuần 12"
 date: "2025-09-09"
-weight: 2
+weight: 12
 chapter: false
-pre: " <b> 1.12 </b> "
+pre: " <b> 1.12. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
-### Mục tiêu tuần 12:
-
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
-
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
 
-### Kết quả đạt được tuần 12:
+### Mục tiêu Tuần 12:
+*   Thiết kế và tối ưu hóa UX cho Bảng điều khiển Ứng phó Sự cố S3.
+*   Bảo mật bảng điều khiển công khai bằng cách triển khai Xác thực Cognito với React.
+*   Ngăn chặn chi phí truy vấn Athena trái phép bằng cách thực thi kiểm soát truy cập dựa trên phiên.
+*   Khám phá thiết lập Linux thay thế (Arch) và mạng WireGuard VPN.
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
+### Các nhiệm vụ thực hiện trong tuần:
+| Ngày | Nhiệm vụ                                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo                        |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
+| 2   |**Thiết kế bảng điều khiển S3 với Kiệt để xác định các chỉ số chính và cải tiến UX, sau đó sửa lỗi và tối ưu hóa hiệu suất bảng điều khiển.**<br>&emsp;+ Brainstorm **bố cục bảng điều khiển S3** với Kiệt, thẻ tóm tắt cảnh báo, dòng thời gian, phân phối mức độ nghiêm trọng, và các chỉ số thời gian thực cho khối lượng cảnh báo và thành công khi gửi.<br>&emsp;+ Xác định **các vấn đề UX**: thiếu bộ lọc, nhóm cảnh báo không rõ ràng, và thiếu chi tiết.<br>&emsp;+ Sửa **lỗi**: Lỗi truy vấn và lỗi giao diện người dùng<br>&emsp;+ Tối ưu hóa **truy vấn bảng điều khiển** để tổng hợp nhanh hơn, thêm làm mới thời gian thực, và cải thiện phân cấp trực quan để các phát hiện quan trọng nổi bật, đã kiểm tra với các sự kiện GuardDuty.| 24/11/2025 | 24/11/2025 ||
+| 3   |**Xác định một vấn đề bảo mật và chi phí nghiêm trọng: quyền truy cập bảng điều khiển không xác thực gây ra các truy vấn Athena không giới hạn khi làm mới trang, sau đó khám phá các giải pháp xác thực.**<br>&emsp;+ Phát hiện ra **bảng điều khiển S3 không có trang đăng nhập**, vì vậy bất kỳ ai cũng có thể làm mới và kích hoạt các truy vấn Athena đắt tiền mà không cần ủy quyền.<br>&emsp;+ Đã thử tích hợp **Cognito + Lambda@Edge** để thêm xác thực tại biên, nhưng gặp trở ngại: CloudFront distribution của tôi sử dụng **giá phẳng (flat pricing)** (không phải trả tiền theo mức sử dụng) và **không thể chuyển đổi**, khiến Lambda@Edge không thể sử dụng được.<br>&emsp;+ Đã thử **CloudFront Functions** như một sự thay thế, kết hợp nó với **Lambda** để triển khai lọc yêu cầu và xác thực cơ bản mà không cần Lambda@Edge.| 25/11/2025 | 25/11/2025 ||
+| 4   |**Gỡ lỗi các vấn đề phiên CloudFront/Lambda, đánh giá AWS Amplify nhưng chuyển sang xác thực dựa trên React để đáp ứng thời hạn.**<br>&emsp;+ Dành hàng giờ để khắc phục sự cố thiết lập **CloudFront Functions + Lambda**, sau đây có thể là lý do: phiên không tồn tại và quyền truy cập chéo tên miền từ S3 bị chặn, không tìm thấy giải pháp khả thi nào.<br>&emsp;+ Khám phá **AWS Amplify** như một sự thay thế cho xác thực được quản lý, nhưng nhận ra cấu trúc bảng điều khiển hiện tại không tương thích nếu không tái cấu trúc đáng kể và lãng phí thời gian.<br>&emsp;+ Quyết định **triển khai xác thực trực tiếp trong bảng điều khiển React** do thời hạn gấp rút.<br>&emsp;+ Tích hợp **đăng nhập Cognito** trực tiếp vào các thành phần React với quản lý phiên dựa trên token, bảo vệ quyền truy cập bảng điều khiển và thực thi truy vấn Athena.<br>&emsp;+ Kiểm tra **luồng xác thực React** đầu cuối, người dùng bây giờ phải xác thực trước khi xem bảng điều khiển, và chỉ các phiên được ủy quyền mới có thể kích hoạt các truy vấn Athena, giải quyết cả vấn đề bảo mật và chi phí.| 26/11/2025 | 26/11/2025 ||
+| 5   |Đây là một dự án phụ: **Cài đặt Arch Linux trên PC dựng sẵn của một người bạn và bắt đầu thiết lập WireGuard VPN, học quản lý gói pacman trong quá trình này.**<br>&emsp;+ Cài đặt **Arch Linux** trên một hệ thống dựng sẵn thay thế cho hệ điều hành mặc định, bây giờ tôi có thể nói một cách chính đáng "I use Arch btw".<br>&emsp;+ Nghiên cứu **bảo mật mạng** cho PC và xác định **WireGuard** là một giải pháp VPN hiện đại, nhẹ để bảo mật lưu lượng truy cập nhóm.<br>&emsp;+ Khám phá **pacman** (trình quản lý gói của Arch) hoạt động khác với **apt**, dành thời gian tìm kiếm các gói WireGuard và hiểu cấu trúc kho lưu trữ của Arch (core, extra, community).<br>&emsp;+ Bắt đầu cấu hình **WireGuard** trên hệ thống Arch nhưng nhận ra sự phức tạp của thiết lập cần nhiều thời gian hơn mức có sẵn trong một ngày.<br>&emsp;+ Ghi lại tất cả tên gói và các bước cấu hình để tiếp tục vào ngày hôm sau.| 27/11/2025 | 27/11/2025 ||
+| 6   |**Hoàn thành cài đặt và cấu hình WireGuard VPN trên Arch Linux, giải quyết các vấn đề phụ thuộc pacman và kiểm tra kết nối ngang hàng.**<br>&emsp;+ Hoàn thành **cài đặt WireGuard** sử dụng pacman, giải quyết xung đột phụ thuộc và tìm đúng phiên bản gói cho Arch.<br>&emsp;+ Tạo **khóa WireGuard** (công khai/riêng tư) và cấu hình kết nối ngang hàng cho mạng dự án trường trung học của nhóm.<br>&emsp;+ Thiết lập **giao diện mạng** và định tuyến IP trên Arch với các quy tắc tường lửa phù hợp để cho phép truy cập VPN an toàn giữa các thành viên nhóm.<br>&emsp;+ Kiểm tra **kết nối WireGuard** đầu cuối, xác minh các đồng đẳng có thể kết nối và giao tiếp qua đường hầm được mã hóa một cách đáng tin cậy.<br>&emsp;+ Ghi lại toàn bộ quy trình thiết lập cho nhóm để những người khác có thể sao chép cấu hình WireGuard trên hệ thống của họ.| 28/11/2025 | 28/11/2025 ||
 
 
+### Kết quả đạt được Tuần 12:
+*   Cải tiến UX Bảng điều khiển S3, giải quyết lỗi và cải thiện hiệu suất trực quan hóa dữ liệu.
+*   Triển khai thành công Xác thực Client-Side sử dụng Cognito và React để bảo vệ các chỉ số nhạy cảm.
+*   Loại bỏ rủi ro tăng đột biến hóa đơn Athena không giới hạn bằng cách thực thi thực thi truy vấn dựa trên phiên.
+*   Cấu hình WireGuard VPN an toàn trên Arch Linux, thể hiện sự linh hoạt trong quản trị hệ thống.

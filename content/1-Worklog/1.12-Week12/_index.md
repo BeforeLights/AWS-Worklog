@@ -8,6 +8,10 @@ pre: " <b> 1.12. </b> "
 
 
 ### Week 12 Objectives:
+*   Design and optimize the UX for the S3 Incident Response Dashboard.
+*   Secure the public dashboard by implementing Cognito Authentication with React.
+*   Prevent unauthorized Athena query costs by implementing session-based access control.
+*   Explore alternative Linux setup (Arch) and WireGuard VPN networking.
 
 ### Tasks to be carried out this week:
 | Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
@@ -20,3 +24,7 @@ pre: " <b> 1.12. </b> "
 
 
 ### Week 12 Achievements:
+*   Overhauled the S3 Dashboard UX, resolving bugs and improving data visualization performance.
+*   Successfully implemented Client-Side Authentication using Cognito and React to secure sensitive metrics.
+*   Eliminated the risk of unlimited Athena billing spikes by enforcing session-based query execution.
+*   Configured a secure WireGuard VPN on Arch Linux, demonstrating versatility in system administration.

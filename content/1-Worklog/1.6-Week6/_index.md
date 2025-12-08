@@ -6,6 +6,10 @@ chapter: false
 pre: " <b> 1.6. </b> "
 ---
 ### Week 6 Objectives:
+*   Define project scope and assign team responsibilities.
+*   Estimate and optimize operational costs using AWS Pricing Calculator.
+*   Gain insights into DevSecOps and Generative AI applications.
+*   Establish a structured documentation system for AWS learning.
 
 ### Tasks to be carried out this week:
 | Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
@@ -18,3 +22,7 @@ pre: " <b> 1.6. </b> "
 
 
 ### Week 6 Achievements:
+*   Defined clear project scope and distributed tasks among team members.
+*   Optimized infrastructure costs by analyzing estimates with AWS Pricing Calculator.
+*   Enhanced knowledge of legal, ethical, and project management aspects in tech.
+*   Created a Notion workspace to centralize and refine AWS notes.

@@ -1,59 +1,31 @@
 ---
-title: "Worklog Tuần 4"
-date: "2025-09-09"
-weight: 1
+title: "Nhật ký Tuần 4"
+date: "2025-09-29"
+weight: 4
 chapter: false
 pre: " <b> 1.4. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
 
-### Mục tiêu tuần 4:
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+### Mục tiêu Tuần 4:
+*   Xây dựng CloudWatch Dashboard tùy chỉnh để trực quan hóa nhật ký và số liệu.
+*   Triển khai tự động hóa tối ưu hóa chi phí sử dụng Lambda và EventBridge.
+*   Thực hiện di chuyển cơ sở dữ liệu không đồng nhất (MSSQL sang MySQL) sử dụng AWS SCT.
+*   Hoàn thiện đề xuất dự án nhóm và ước tính chi phí tài nguyên.
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
-
-### Kết quả đạt được tuần 4:
-
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
+### Các nhiệm vụ thực hiện trong tuần:
+| Ngày | Nhiệm vụ                                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo                        |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
+| 2   |**Xây dựng bảng điều khiển CloudWatch để trực quan hóa các số liệu chính và cảnh báo từ workshop AWS CloudWatch.**<br>&emsp;+ Mở **CloudWatch console**, điều hướng đến **Dashboards**, và tạo một **bảng điều khiển tùy chỉnh** mới với tên mô tả.<br>&emsp;+ Thêm **các tiện ích số liệu** hiển thị **số liệu đếm lỗi** tùy chỉnh được tạo từ **bộ lọc số liệu CloudWatch Logs**, điều chỉnh khoảng thời gian và thống kê để dễ đọc.<br>&emsp;+ Đặt **các tiện ích cảnh báo** trên bảng điều khiển để hiển thị trạng thái thời gian thực của **cảnh báo bắt nguồn từ nhật ký**, liên kết nhật ký, số liệu, và cảnh báo trong một chế độ xem.<br>&emsp;+ Sắp xếp và thay đổi kích thước các tiện ích trên lưới 24 ô để làm nổi bật các thành phần quan sát quan trọng và lưu bảng điều khiển để tái sử dụng.  | 29/09/2025 | 29/09/2025 | [AWS CloudWatch Workshop :: AWS Account Setup](https://000008.awsstudygroup.com/)<br><br>[CloudWatch Dashboards :: AWS Account Setup](https://000008.awsstudygroup.com/6-cloud-watch-dashboard/)<br><br>[Using Amazon CloudWatch dashboards - AWS Documentation](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Dashboards.html)<br><br>[Creating a customized CloudWatch dashboard - AWS Documentation](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/create_dashboard.html) |
+| 3 | - Hoàn thành **Being a researcher (in Information Science and Technology)** trên Coursera **(ENW493c)** | 30/09/2025 | 30/09/2025 | |
+| 4   |- Hoàn thành **Advanced Writing** trên Coursera **(ENW493c)**| 01/10/2025 | 01/10/2025 <br>| |
+| 5   |**Tự động hóa tối ưu hóa chi phí EC2 sử dụng các hàm Lambda, thẻ (tags), và thông báo Slack để kiểm soát khởi động/dừng.**<br>&emsp;+ Tạo một **VPC**, **subnets**, và **security group** riêng để host một **EC2 instance** phòng lab mục tiêu cho việc lập lịch tự động.<br>&emsp;+ Khởi chạy và gắn thẻ một **EC2 instance** với thẻ tối ưu hóa chi phí (ví dụ, **environment_auto**) để chỉ các instance cụ thể bị ảnh hưởng bởi tự động hóa.<br>&emsp;+ Cấu hình một **Slack Incoming Webhook** và kênh để nhận thông báo thời gian thực từ **AWS Lambda** về các hành động khởi động/dừng EC2.<br>&emsp;+ Tạo một **IAM execution role** cho **Lambda** với quyền mô tả, khởi động, và dừng các EC2 instance được gắn thẻ và ghi log.<br>&emsp;+ Triển khai hai **hàm Lambda** (start/stop) lọc các EC2 instance theo thẻ, gọi các API **StartInstances**/**StopInstances**, và đăng các tin nhắn có cấu trúc lên Slack.[10]<br>&emsp;+ Kiểm tra quy trình đầu cuối bằng cách gọi các hàm, xác thực thay đổi trạng thái EC2 trong bảng điều khiển, và xác nhận thông báo Slack làm cơ sở cho giải pháp được lập lịch sử dụng **EventBridge/CloudWatch Events**.<br>- **Thảo luận với nhóm** về những việc cần làm với **dự án** của chúng tôi và cách chúng tôi có thể triển khai **Slack**| 02/10/2025 | 02/10/2025 | [Optimize EC2 cost with Lambda - AWS Study Group](https://000022.awsstudygroup.com)<br><br>[Defining Lambda function permissions with an execution role](https://docs.aws.amazon.com/lambda/latest/dg/lambda-intro-execution-role.html)<br><br>[How to Schedule EC2 Instances to Stop/Start Automatically](https://dev.to/aws-builders/how-to-schedule-ec2-instances-to-stopstart-automatically-1bl5)<br><br>[Use AWS Lambda to send Slack notifications for running Amazon EC2 instances](https://nivleshc.wordpress.com/2021/06/27/use-aws-lambda-to-send-slack-notifications-for-running-amazon-ec2-instances) |
+| 6   |- Tham gia sự kiện **AI-Driven Development Life Cycle: Reimagining Software Engineering**| 03/10/2025 | 04/10/2025 |  | 
 
 
+### Kết quả đạt được Tuần 4:
+*   Đã thiết kế và triển khai CloudWatch Dashboard tùy chỉnh để giám sát sức khỏe ứng dụng và tỷ lệ lỗi.
+*   Phát triển giải pháp tối ưu hóa chi phí serverless sử dụng Lambda để tự động dừng/chạy các EC2 instance, tích hợp với thông báo Slack.
+*   Di chuyển thành công cơ sở dữ liệu MSSQL cũ sang Amazon MySQL sử dụng AWS Schema Conversion Tool (SCT), giải quyết các vấn đề tương thích.
+*   Phối hợp với nhóm để hoàn thiện đề xuất dự án đồ án và đảm bảo quyền truy cập quản trị cho tất cả các thành viên.

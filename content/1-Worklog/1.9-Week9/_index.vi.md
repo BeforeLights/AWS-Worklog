@@ -1,59 +1,28 @@
 ---
-title: "Worklog Tuần 9"
+title: "Nhật ký Tuần 9"
 date: "2025-09-09"
-weight: 1
+weight: 9
 chapter: false
 pre: " <b> 1.9. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+### Mục tiêu Tuần 9:
+*   Phân tích chi tiêu và mô hình sử dụng đám mây sử dụng AWS Glue và Amazon Athena.
+*   Giám sát các chỉ số EC2 trong thời gian thực bằng cách tạo bảng điều khiển Grafana tùy chỉnh qua CloudWatch.
+*   Tự động hóa quy trình nghiệp vụ sử dụng AWS Step Functions và AWS SAM.
+*   Triển khai cơ sở hạ tầng dưới dạng mã (IaC) sử dụng AWS CDK trong môi trường VS Code cục bộ.
+
+### Các nhiệm vụ thực hiện trong tuần:
+| Ngày | Nhiệm vụ                                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo                        |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
+| 2   | - Hoàn thành khóa học MOOC **Quản trị dữ liệu và an toàn thông tin** trên Coursera **(Chương trình KS57)** | 03/11/2025 | 03/11/2025 ||
+| 3   | **Sử dụng AWS Glue và Amazon Athena để khám phá Báo cáo Chi phí & Sử dụng (Cost & Usage Reports - CUR) và hiểu nguồn gốc chi tiêu đám mây.**<br>&emsp;+ Chạy **các truy vấn Athena đơn giản** trên các bảng CUR được tạo bởi Glue để xem các hàng ví dụ, kiểm tra chu kỳ thanh toán, và làm quen với cấu trúc dữ liệu chi phí.<br>&emsp;+ Tóm tắt **chi phí theo tài khoản và dịch vụ** trong Athena để xem tài khoản và dịch vụ AWS nào chịu trách nhiệm cho mức chi tiêu cao nhất, sau đó tập trung vào các dòng **sử dụng Amazon EC2 theo yêu cầu (on-demand)** chính để biết thêm chi tiết.<br>&emsp;+ Kiểm tra **các thẻ phân bổ chi phí** (như thẻ trung tâm chi phí) trong dữ liệu CUR để so sánh mức chi tiêu được gắn thẻ chính xác cho các nhóm so với mức vẫn chưa được gắn thẻ.<br>&emsp;+ So sánh **mức sử dụng được giảm giá (Savings Plans/Instance dự trữ)** với giá ước tính theo yêu cầu trong các truy vấn Athena để xem khoản tiết kiệm mà các khoản giảm giá cung cấp cho các loại sử dụng EC2 cụ thể.<br>&emsp;+ Sử dụng kết quả truy vấn để xây dựng bức tranh rõ ràng hơn về **ai đang chi tiêu, cho dịch vụ nào, và hiệu quả ra sao**, để chuẩn bị cho công việc tối ưu hóa chi phí trong tương lai. | 04/11/2025 | 04/11/2025      | [Cost and performance analysis with AWS Glue and Amazon Athena](https://000040.awsstudygroup.com/)<br><br>[Querying Cost and Usage Reports using Amazon Athena](https://docs.aws.amazon.com/cur/latest/userguide/cur-query-athena.html)<br><br>[AWS Cost and Usage Reports overview](https://docs.aws.amazon.com/cur/latest/userguide/what-is-cur.html)<br><br>[Creating tables for CUR data using AWS Glue and Athena](https://docs.aws.amazon.com/athena/latest/ug/creating-tables.html)<br><br>[Organizing and tracking costs with AWS cost allocation tags](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html)<br><br>[Amazon Athena pricing](https://aws.amazon.com/athena/pricing/) |
+| 4   |**Thiết lập Grafana để giám sát EC2 instance của tôi sử dụng CloudWatch và xây dựng một bảng điều khiển trực tiếp đơn giản.**<br>&emsp;+ Kết nối **Grafana** với **Amazon CloudWatch** như một nguồn dữ liệu để nó có thể đọc các chỉ số EC2 từ tài khoản AWS của tôi.<br>&emsp;+ Kiểm tra nguồn dữ liệu và xác nhận Grafana có thể truy vấn thành công các chỉ số CloudWatch cho instance của tôi.<br>&emsp;+ Tạo một **bảng điều khiển Grafana** với các bảng hiển thị **các chỉ số EC2** chính như mức sử dụng CPU theo thời gian.<br>&emsp;+ Lưu bảng điều khiển và sử dụng các tùy chọn **làm mới và chia sẻ** để nó có thể được tái sử dụng để theo dõi sức khỏe instance trong thời gian thực.| 05/11/2025 | 05/11/2025 |[Getting started with Grafana basic](https://000029.awsstudygroup.com/)<br><br>[Using Amazon CloudWatch metrics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/working_with_metrics.html)<br><br>[Grafana CloudWatch data source configuration](https://grafana.com/docs/grafana/latest/datasources/aws-cloudwatch/)<br><br>[Build your first Grafana dashboard](https://grafana.com/docs/grafana/latest/fundamentals/getting-started/first-dashboards/)| 
+| 5   |**Hoàn thành thiết lập đầu cuối **dựa trên CDK** cho môi trường máy chủ web EC2 được sử dụng trong bài lab **AWS Storage Gateway**, sử dụng **VS Code** cục bộ thay vì Cloud9.**<br>&emsp;+ Hoàn thành các bước **giới thiệu** và **chuẩn bị**, bao gồm tạo **IAM role** cần thiết cho phép Storage Gateway truy cập **S3** một cách an toàn. <br>&emsp;+ Thiết lập môi trường phát triển **AWS CDK** cục bộ trong **VS Code** với AWS CLI được cấu hình cho đúng tài khoản và khu vực. <br>&emsp;+ **Khởi tạo** một dự án **AWS CDK** mới, định nghĩa một **VPC** với các subnet công khai, và kiểm tra mẫu CloudFormation đã tổng hợp để tìm lỗi từ máy cục bộ. <br>&emsp;+ **Cập nhật** CDK stack để thêm một **EC2 instance**, security group, và user data script cài đặt **Apache**, sau đó triển khai stack và xác thực máy chủ web từ IP công khai của instance.| 06/11/2025 | 06/11/2025 |[CDK Basic](https://000038.awsstudygroup.com)|
+| 6   |**Hoàn thành workshop AWS Step Functions cốt lõi: mô hình hóa luồng nghiệp vụ, nối các dịch vụ mẫu, và triển khai state machine được quản lý bởi SAM với quyền IAM phù hợp.**<br>&emsp;+ Xem lại **chi tiết miền nghiệp vụ và quy trình làm việc** cho quy trình đăng ký tài khoản, xác định từng bước nghiệp vụ để sau này ánh xạ vào các trạng thái Step Functions.<br>&emsp;+ Thiết lập môi trường **VS Code cục bộ + AWS Toolkit** và sử dụng nó (thay vì Cloud9 vì tôi không thể sử dụng) để làm việc với các dịch vụ backend mẫu và cơ sở hạ tầng của workshop trong khu vực AWS đích.<br>&emsp;+ Xây dựng **AWS Step Functions state machine** đầu tiên để điều phối việc tạo tài khoản và kiểm tra dữ liệu, sau đó sử dụng biểu đồ/lịch sử thực thi để xác minh đầu vào và đầu ra của từng trạng thái Task.<br>&emsp;+ Tinh chỉnh **các trạng thái Task và xử lý đầu vào/đầu ra trạng thái** với `InputPath` và `ResultPath` để dữ liệu ứng dụng và kết quả kiểm tra được bảo toàn sạch sẽ qua quy trình làm việc.<br>&emsp;+ Di chuyển state machine vào một **SAM template** với một execution role chuyên dụng, cho phép CloudFormation quản lý việc triển khai và IAM cho quy trình làm việc đầu cuối.| 07/11/2025 | 07/11/2025 | [Get Started with AWS Step Functions](https://000047.awsstudygroup.com/)<br><br>[Using AWS SAM to build Step Functions workflows](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-sam-sfn.html)<br><br>[Working with AWS CDK and Toolkit in VS Code](https://docs.aws.amazon.com/toolkit-for-vscode/latest/userguide/aws-cdk-apps.html)<br><br>[Processing input and output in Step Functions](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-input-output-filtering.html)<br><br>[Service-level permissions for Step Functions](https://docs.aws.amazon.com/step-functions/latest/dg/concept-create-iam-advanced.html) |
 
 
-### Mục tiêu tuần 9:
-
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
-
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
-
-### Kết quả đạt được tuần 9:
-
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+### Kết quả đạt được Tuần 9:
+*   Phân tích hóa đơn chi tiết sử dụng Amazon Athena trên các bảng Data Glue Catalog.
+*   Thiết lập giải pháp quan sát thời gian thực cho EC2 sử dụng Grafana và CloudWatch.
+*   Điều phối thành công quy trình làm việc serverless sử dụng Step Functions và định nghĩa hạ tầng với SAM.
+*   Chuyển đổi việc cung cấp cơ sở hạ tầng từ các bước thủ công sang triển khai tự động bằng CDK trong VS Code.

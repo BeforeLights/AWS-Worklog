@@ -6,7 +6,10 @@ chapter: false
 pre: " <b> 1.7. </b> "
 ---
 ### Week 7 Objectives:
-
+*   Deploy and configure Amazon FSx for Windows File Server with AD integration.
+*   Perform storage administration tasks: deduplication, quotas, and shadow copies.
+*   Benchmark file system performance using DiskSpd and monitor via CloudWatch.
+*   Reinforce cloud architecture knowledge through gamified learning (AWS Card Clash).
 
 ### Tasks to be carried out this week:
 | Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
@@ -19,3 +22,7 @@ pre: " <b> 1.7. </b> "
 
 
 ### Week 7 Achievements:
+*   Successfully provisioned and managed a high-performance Windows file server environment on AWS using FSx.
+*   Executed essential storage tasks including Data Deduplication (saving space) and Shadow Copies (enabling user-driven recovery).
+*   Enforced governance through user storage quotas and monitored file system health via CloudWatch.
+*   Enhanced team knowledge of AWS services and architecture through interactive learning sessions.

@@ -1,59 +1,34 @@
 ---
-title: "Worklog Tuần 1"
+title: "Nhật ký Tuần 1"
 date: "2025-09-09"
 weight: 1
 chapter: false
 pre: " <b> 1.1. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+
+### Mục tiêu Tuần 1:
+
+* Kết nối với các thành viên và người hướng dẫn FCJ.
+* Tìm hiểu môi trường làm việc văn phòng là như thế nào.
+* Cài đặt Linux, học cách sử dụng Linux đúng cách.
+* Học các kiến thức cơ bản về AWS, console và CLI.
+* Hoàn thành mô-đun thứ nhất và thứ hai.
 
 
-### Mục tiêu tuần 1:
-
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
-
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+### Các nhiệm vụ thực hiện trong tuần:
+| Ngày | Nhiệm vụ | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
+| 2   | - Xem xét và xác nhận các quy định và hướng dẫn thực tập chính thức. <br> - Tạo tài khoản AWS dựa trên tài liệu. (**Xem ID tài khoản**, **Cập nhật thông tin xác thực tài khoản**, **Tạo bí danh**) <br> - Xác nhận các bước cần thiết để đóng tài khoản của tôi <br>- Hiểu về MFA cho tài khoản (**Chọn Virtual MFA để dễ sử dụng**) <br>- Hiểu và tạo Nhóm và Người dùng <br>- Đọc phần **Hỗ trợ xác thực tài khoản** (Tôi không cần làm phần này vì mọi thứ diễn ra suôn sẻ) <br>- Học về những điều cơ bản của AWS Management Console <br>- Biết về các trường hợp hỗ trợ (**các loại trường hợp hỗ trợ**, **cách tạo một trường hợp tốt**) <br>- Biết về **các loại Ngân sách**, **các bước** để tạo chúng và **lợi ích** cho từng loại. | 08/09/2025 | 08/09/2025 | [Setting up an AWS account](https://000001.awsstudygroup.com) <br><br> [What is the AWS Management Console?](https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/what-is.html) <br><br> [Managing Costs with AWS Budgets](https://000007.awsstudygroup.com/) <br><br> [Getting Help with AWS Support](https://000009.awsstudygroup.com/) <br><br> [AWS Service Quotas](https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html) <br><br> [Compare AWS Support Plans](https://aws.amazon.com/premiumsupport/plans/)
+| 3   | - Cài đặt **Hugo** và bắt đầu thiết lập<br> - Học các nguyên tắc cơ bản về **IAM**<br>&emsp; + Tạo và quản lý **IAM Groups** để tổ chức người dùng<br>&emsp; + Áp dụng **IAM Policies** cho các quyền hiệu quả<br>&emsp; + Quản lý **IAM Users** thông qua các nhóm để kiểm soát hợp lý<br>&emsp; + **IAM Role** để chuyển đổi quyền dễ dàng<br> - Bắt đầu với **Amazon VPC** (Virtual Private Cloud)<br>&emsp; + Ôn tập **Subnets**, làm quen với mối quan hệ của nó với **AZ**s (Availability Zone) và các thực tiễn tốt nhất <br>&emsp; + Học về **Route table** <br>&emsp; + Học về **IGW** (Internet Gateway) và **NAT Gateway** <br>&emsp; Học về các nguyên tắc cơ bản của Tường lửa (**Security Group**, **Network ACLs**, **VPC Resource Map**) <br> - Thực hành sau khi học các nguyên tắc cơ bản <br>&emsp; + Tạo một **EC2** instance, **NAT Gateway**, sử dụng **Reachability Analyzer**, **SSM**, **CloudWatch** | 09/09/2025 | 09/09/2025 | [AWS Identity and Access Management (IAM) Access Control](https://000002.awsstudygroup.com/vi/) <br><br> [Amazon VPC and AWS Site-to-Site VPN Workshop](https://000003.awsstudygroup.com/)
+| 4   | - Hoàn thành việc sửa lỗi cho **Hugo** <br> Bắt đầu với **Site to Site VPN** <br>&emsp; + Tạo một **VPC** cho **VPN**, tạo một **EC2** instance <br>&emsp; Tạo một **Virtual Private Gateway** để kết nối với các endpoints, tạo một **Customer Gateway**, Thiết lập **route tables** và **propagation** cho **kết nối VPN** (**EC2** trong trường hợp này) <br>&emsp; + Cấu hình **Customer Gateway** (Tôi chọn **Libreswan** mà không biết **Strongswan** được khuyến nghị và **OpenSwan** không còn sử dụng được nữa.) <br>&emsp; + Dành phần lớn thời gian để **gỡ lỗi**. | 10/09/2025 | 10/09/2025 | [Amazon VPC and AWS Site-to-Site VPN Workshop](https://000003.awsstudygroup.com/)
+| 5   | - Hoàn thành **gỡ lỗi** **cấu hình** của **Customer Gateway** (một số lệnh không hoạt động và những lệnh hoạt động nằm trong **5.2.7**, sử dụng **systemd** thay vì **service**) <br> - **Hoàn thành Amazon VPC and AWS Site-to-Site VPN Workshop** một cách trọn vẹn <br> - Bắt đầu Lab mới (**Introduction to Amazon EC2**) <br>&emsp; + Tạo một **Linux VPC**, **Windows VPC**, **Security group Linux**, **Security group Windows** <br>&emsp; + Tạo **Windows Instance** và kết nối với nó. <br>&emsp; + Tạo **Linux Instance** và kết nối với nó. <br>&emsp; + Học về các nguyên tắc cơ bản của **EC2**, thay đổi **instance type**, tạo **snapshots**, v.v... <br>&emsp; + Tạo **custom AMIs** có và không có **sysprep**, tạo instances từ các AMIs. <br>&emsp; + Đối với phần **Cách kết nối khi bạn mất keypair**, tôi đã tạo một IAM Role với **AmazonSSMFullAccess** và cập nhật EC2 để có chính sách đó, kiểm tra SSM nhưng tôi không thấy instance, dành một chút thời gian tìm kiếm và vẫn thấy **Managed: false**, kiểm tra kết nối, kiểm tra **SSM Agent logs** xem có lỗi không (không có lỗi), **khởi động lại** **dịch vụ SSM** bên trong AMI và nó hoạt động sau đó, nó vẫn là **Managed: false** vì một số lý do <br>&emsp; + Thay thế **keypair** qua **chỉnh sửa user data** thành công cho **máy Linux** <br>&emsp; + Cài đặt môi trường desktop cho **Ubuntu AMI** và nó khởi động thành công  | 11/09/2025 | 11/09/2025 | [Amazon VPC and AWS Site-to-Site VPN Workshop](https://000003.awsstudygroup.com/) <br><br> [Introduction to Amazon EC2](https://000004.awsstudygroup.com/) <br><br> [Create an Amazon EC2 AMI using Windows Sysprep](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-create-win-sysprep.html#sysprep-phases) <br><br> [Working with SSM Agent on EC2 instances for Windows Server](https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-agent-windows.html) <br><br> [AWS Systems Manager Parameter Store](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html) |
+| 6   | - Thiết lập một máy chủ web **LAMP** <br>&emsp; + Tải xuống **Apache, PHP và MariaDB** và chạy máy chủ web <br>&emsp; + Máy chủ chạy đúng dự kiến với **tệp PHP**  <br>&emsp; + Hoàn thành cấu hình **cơ sở dữ liệu** <br>&emsp; + Cài đặt **phpMyAdmin**, đăng nhập thành công vào **trang phpMyAdmin** và tạo cơ sở dữ liệu mới sau đó <br> - Cài đặt **Node.js** trên **Linux** sử dụng **Node Version Manager (nvm)** để dễ sử dụng, nó cho phép chúng ta chuyển đổi giữa các phiên bản khác nhau <br> - Triển khai **AWS FCJ Management** trên EC2 Linux instance thành công  <br> - Cài đặt **XAMPP** và **Node.js** trên **Windows Instance**, cấu hình đầy đủ và triển khai chúng  | 12/09/2025 | 12/09/2025 | [Introduction to Amazon EC2](https://000004.awsstudygroup.com/) <br><br> |
 
 
-### Kết quả đạt được tuần 1:
-
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+### Kết quả đạt được Tuần 1:
+*   Đã tạo thành công và bảo mật tài khoản AWS Free Tier với MFA và ngân sách.
+*   Nắm vững các nguyên tắc cơ bản của IAM: Nhóm, Người dùng, Chính sách và Vai trò.
+*   Xây dựng và bảo mật cơ sở hạ tầng VPC với Subnets, Route Tables, NAT Gateways, Security Groups và NACLs.
+*   Thiết lập kết nối Site-to-Site VPN (Libreswan) hoạt động để mô phỏng mạng đám mây lai.
+*   Thực hiện các hoạt động EC2 nâng cao: AMIs tùy chỉnh (Sysprep), khôi phục Keypair qua User Data và gỡ lỗi SSM Agent.
+*   Triển khai ngăn xếp LAMP và môi trường Node.js trên cả phiên bản EC2 Linux và Windows.

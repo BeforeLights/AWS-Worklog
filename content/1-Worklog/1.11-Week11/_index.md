@@ -7,6 +7,10 @@ pre: " <b> 1.11. </b> "
 ---
 
 ### Week 11 Objectives:
+*   Refactor Alerting Lambda functions into a unified, modular "Alert Dispatch" service.
+*   Integrate Slack webhook capabilities to expand the alerting notification channels.
+*   Centralize credential management using Lambda Environment Variables.
+*   Continue refining the Incident Response System project plan in Jira.
 
 ### Tasks to be carried out this week:
 | Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
@@ -19,3 +23,7 @@ pre: " <b> 1.11. </b> "
 
 
 ### Week 11 Achievements:
+*   Significantly improved code maintainability by merging disparate Lambda functions into a single "Alert Dispatcher".
+*   Expanded the incident alerting system to support Telegram, Slack, and SES Email simultaneously.
+*   Implemented secure configuration practices by moving hardcoded credentials to Environment Variables.
+*   Enforced project clarity by defining Epics and assigning granular responsibilities in Jira.
