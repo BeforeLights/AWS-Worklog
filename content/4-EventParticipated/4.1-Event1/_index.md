@@ -80,4 +80,4 @@ The live demonstration of Kiro was particularly impactful, showcasing how a simp
 
 ### Event Photos
 
-![Group picture during the event](../4.1-Event1/TheBois-AIDLC.jpg)
+![Group picture during the event](/images/4-EventParticipated/4.1-Event1/TheBois-AIDLC.jpg)

@@ -41,7 +41,7 @@ Bedrock Data Automation giúp chuẩn hóa quá trình trích xuất insight gi�
 
 Khi tích hợp với các dịch vụ AWS khác (như [AWS Glue](https://aws.amazon.com/glue/) và [Amazon SageMaker Unified Studio](https://aws.amazon.com/sagemaker/unified-studio/)), Bedrock Data Automation tạo điều kiện xây dựng giải pháp phân tích tổng thể qua cái nhìn tích hợp cho các tài sản dữ liệu vốn trước đây bị silo hóa.
 
-![alt text](../3.3-Blog3/image.png)
+![alt text](/images/3-BlogsTranslated/3.3-Blog3/image.png)
 
 *Figure 1 – Giải pháp kiến trúc lưu trữ dữ liệu phi cấu trúc cấp cao*
 
@@ -105,13 +105,13 @@ Khi tích hợp với các dịch vụ AWS khác (như [AWS Glue](https://aws.am
 * [*AWS Glue Documentation*](https://docs.aws.amazon.com/glue/latest/dg/what-is-glue.html)  
 * [*Amazon DataZone User Guide*](https://docs.aws.amazon.com/datazone/latest/userguide/what-is-datazone.html)
 
-*![Vani Eswarappa](../3.3-Blog3/image-1.png)*
+*![Vani Eswarappa](/images/3-BlogsTranslated/3.3-Blog3/image-1.png)*
 
 ### *Vani Eswarappa*
 
 *Vani Eswarappa là Principal Architect tại AWS, có kinh nghiệm về Containers, AI/ML, Enterprise Architecture. Là một technical leader, Vani làm việc với khách hàng AWS về hành trình cloud nhằm đáp ứng nhu cầu kinh doanh. Khi không làm việc, cô thích dành thời gian bên gia đình và khám phá địa điểm mới ngoài trời.*
 
-*![Rupesh Mishra](../3.3-Blog3/image-2.png)*
+*![Rupesh Mishra](/images/3-BlogsTranslated/3.3-Blog3/image-2.png)*
 
 ### *Rupesh Mishra*
 

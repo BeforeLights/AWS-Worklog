@@ -95,4 +95,4 @@ The event was highly engaging and informative, with well-prepared speakers and i
 - **Networking:** Formed an unofficial group, "Mèo Cam Đeo Khăn," in collaboration with other attendees, fostering connections and future collaboration opportunities.
 
 ### Event Photos
-- ![Mèo Cam Đeo Khăn group](../4.2-Event2/Meocamdeokhan.jpg)
+- ![Mèo Cam Đeo Khăn group](/images/4-EventParticipated/4.2-Event2/Meocamdeokhan.jpg)

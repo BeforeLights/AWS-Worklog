@@ -154,4 +154,4 @@ This event is also the first time some of the speaker's first time presenting a 
 - Monitoring & Observability wasn't as great and we can notice the speaker's nervousness but still delivered great values regardless
 
 #### Some event photos
-![Group picture during the event taken by speaker Tran Dai Vi](../4.3-Event3/CM2GroupPic.jpg)
+![Group picture during the event taken by speaker Tran Dai Vi](/images/4-EventParticipated/4.3-Event3/CM2GroupPic.jpg)

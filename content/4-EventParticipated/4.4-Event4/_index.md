@@ -169,5 +169,5 @@ This workshop was highly relevant to our project on **Automated Incident Respons
 
 ## Event Photos
 
-- ![Group Picture With Speakers](../4.4-Event4/PicturewithSpeakers.jpg)
+- ![Group Picture With Speakers](/images/4-EventParticipated/4.4-Event4/PicturewithSpeakers.jpg)
   _Group photo with Mendel Grabski and Van Hoang Kha._
