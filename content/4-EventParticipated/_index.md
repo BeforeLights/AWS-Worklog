@@ -13,6 +13,8 @@ During my internship, I participated in several events. Each one was a memorable
 
 &emsp;**Date & Time:** September 18th, 2025
 
+&emsp;**Location:** Level 26, Bitexco Financial Tower, 2 Hai Trieu Street, Ho Chi Minh City
+
 &emsp;**Role:** Attendee
 
 ---
@@ -21,6 +23,8 @@ During my internship, I participated in several events. Each one was a memorable
 &emsp;**Event Name:** AWS Cloud Mastery Series #1 - AI/ML/GenAI on AWS
 
 &emsp;**Date & Time:** November 15th, 2025
+
+&emsp;**Location:** Level 26, Bitexco Financial Tower, 2 Hai Trieu Street, Ho Chi Minh City
 
 &emsp;**Role:** Attendee
 
@@ -31,6 +35,8 @@ During my internship, I participated in several events. Each one was a memorable
 
 &emsp;**Date & Time:** November 17th, 2025
 
+&emsp;**Location:** Level 26, Bitexco Financial Tower, 2 Hai Trieu Street, Ho Chi Minh City
+
 &emsp;**Role:** Attendee
 
 ---
@@ -40,4 +46,6 @@ During my internship, I participated in several events. Each one was a memorable
 
 &emsp;**Date & Time:** November 29th, 2025
 
-&emsp;**Role:** Attendee  
+&emsp;**Location:** Level 26, Bitexco Financial Tower, 2 Hai Trieu Street, Ho Chi Minh City
+
+&emsp;**Role:** Attendee
