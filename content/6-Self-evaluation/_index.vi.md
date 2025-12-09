@@ -7,7 +7,7 @@ pre: " <b> 6. </b> "
 ---
 
 
-Trong suốt thời gian thực tập tại **Amazon Web Services (AWS)** từ **08/09/2025** đến **09/12/2025**, tôi đã có cơ hội học hỏi, rèn luyện và áp dụng kiến thức đã được trang bị tại trường vào môi trường làm việc thực tế.  
+Trong suốt thời gian thực tập tại **Amazon Web Services (AWS)** từ **08/09/2025** đến **12/12/2025**, tôi đã có cơ hội học hỏi, rèn luyện và áp dụng kiến thức đã được trang bị tại trường vào môi trường làm việc thực tế.  
 Tôi đã tham gia **Chương trình Thực tập AWS First Cloud Journey**, qua đó cải thiện kỹ năng **Điện toán đám mây, Cơ sở hạ tầng dưới dạng Mã (IaC), DevOps, Tuân thủ bảo mật và Kiến trúc Giải pháp**.  
 
 Về tác phong, tôi luôn cố gắng hoàn thành tốt nhiệm vụ, tuân thủ nội quy, và tích cực trao đổi với đồng nghiệp để nâng cao hiệu quả công việc.
