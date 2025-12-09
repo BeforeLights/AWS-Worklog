@@ -30,12 +30,22 @@ The company provides an internship allowance and offers flexible working hours w
 
 ### Additional Questions
 - What did you find **most satisfying** during your internship?  
+  The most satisfying aspect was successfully setting up complex integrations like Telegram and Cognito. Seeing the authentication flow work seamlessly and being able to deploy the entire infrastructure using AWS CDK gave me a strong sense of accomplishment in mastering these technical challenges.
+
 - What do you think the company **should improve** for future interns?  
+  I believe the timeline of the workshops could be improved. Specifically, scheduling the Mastery Series earlier, before the project phase begins, would provide interns with the necessary foundational knowledge to tackle the project more effectively from the start.
+
 - If recommending to a friend, would you **suggest they intern here**? Why or why not?  
+  Yes, I would definitely recommend it. The community is incredibly welcoming, and the mentors are genuinely supportive. I particularly appreciate the culture of mutual support and the shared mindset of continuous self-improvement and helping one another grow.
 
 ---
 
 ### Suggestions & Expectations
 - Do you have any suggestions to improve the internship experience?  
+  As mentioned, aligning the workshop schedule to ensure technical training (like the Mastery Series) precedes the project kick-off would be a significant improvement for future cohorts.
+
 - Would you like to continue this program in the future?  
+  Yes, I would be eager to continue with the program.
+
 - Any other comments (free sharing):
+  I would like to express my sincere thanks for this internship opportunity. It has been a valuable learning experience.

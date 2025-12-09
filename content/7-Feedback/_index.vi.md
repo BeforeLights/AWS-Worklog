@@ -29,11 +29,21 @@ Công ty có hỗ trợ phụ cấp thực tập và tạo điều kiện về t
 
 ### Một số câu hỏi khác
 - Điều bạn **hài lòng nhất** trong thời gian thực tập?  
+  Điều khiến mình hài lòng nhất là đã thiết lập thành công các tích hợp phức tạp như Telegram và Cognito. Việc chứng kiến luồng xác thực hoạt động trơn tru và có thể triển khai toàn bộ cơ sở hạ tầng bằng AWS CDK đã mang lại cho mình cảm giác thành tựu lớn trong việc làm chủ các thách thức kỹ thuật này.
+
 - Điều bạn nghĩ công ty **cần cải thiện** cho các thực tập sinh sau?  
+  Mình tin rằng thời gian biểu của các buổi workshop có thể được cải thiện. Cụ thể, việc sắp xếp Mastery Series sớm hơn, trước khi giai đoạn dự án bắt đầu, sẽ cung cấp cho thực tập sinh kiến thức nền tảng cần thiết để giải quyết dự án hiệu quả hơn ngay từ đầu.
+
 - Nếu giới thiệu cho bạn bè, bạn có **khuyên họ thực tập ở đây không**? Vì sao?  
+  Có, mình chắc chắn sẽ giới thiệu. Cộng đồng ở đây cực kỳ cởi mở và các mentor thực sự hỗ trợ rất nhiệt tình. Mình đặc biệt trân trọng văn hóa hỗ trợ lẫn nhau và tư duy cùng nhau hoàn thiện bản thân và giúp đỡ nhau cùng phát triển.
 
 
 ### Đề xuất & mong muốn
 - Bạn có đề xuất gì để cải thiện trải nghiệm trong kỳ thực tập?  
-- Bạn có muốn tiếp tục chương trình này trong tương lai?
+  Như đã đề cập, việc điều chỉnh lịch trình workshop để đảm bảo việc đào tạo kỹ thuật (như Mastery Series) diễn ra trước khi bắt đầu dự án sẽ là một cải tiến đáng kể cho các khóa tiếp theo.
+
+- Bạn có muốn tiếp tục chương trình này trong tương lai?  
+  Có, mình rất mong muốn được tiếp tục đồng hành cùng chương trình.
+
 - Góp ý khác (tự do chia sẻ):
+  Mình muốn gửi lời cảm ơn chân thành vì cơ hội thực tập này. Đây thực sự là một trải nghiệm học tập quý giá.
