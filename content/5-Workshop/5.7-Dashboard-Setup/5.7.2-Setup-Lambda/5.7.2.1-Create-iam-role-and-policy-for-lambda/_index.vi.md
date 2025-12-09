@@ -31,8 +31,6 @@ Trong hướng dẫn này, bạn sẽ cài đặt IAM Role và Policy cho Lambda
    - Trong hộp tìm kiếm, nhập `AWSLambdaBasicExecutionRole`
    - Đánh dấu ô bên cạnh **"AWSLambdaBasicExecutionRole"**
    - Nhấn **"Next"**
-
-    ![Screenshot: IAM Create role - Add permissions](/static/images/5-Workshop/5.7-Dashboard-setup/5.7.2-lambda-setup/lambda_iam_role_2.png)
     
 5.  **Đặt tên, xem lại, và tạo**:
 
