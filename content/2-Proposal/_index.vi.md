@@ -48,6 +48,11 @@ Giải pháp của chúng tôi sử dụng một kiến trúc đa giai đoạn t
 - **Amazon Cognito**: Bảo mật quyền truy cập cho người dùng bảng điều khiển.
 - **Amazon CloudFront**: Tăng tốc độ phân phối bảng điều khiển trên toàn cầu.
 - **Amazon SNS & SES**: Xử lý thông báo qua tin nhắn và email.
+- **AWS CloudTrail**: Ghi nhật ký tất cả các hành động để kiểm toán.
+- **Amazon CloudWatch**: Giám sát và bảng điều khiển.
+- **Amazon EC2**: Các instance tùy chọn để phân tích.
+- **AWS KMS**: Quản lý khóa để mã hóa.
+- **Amazon Kinesis Data Firehose**: Truyền dữ liệu đến S3.
 
 ### Thiết kế Thành phần
 - **Lớp Thu thập Dữ liệu & Phát hiện**: Thu thập các sự kiện từ VPC Flow Logs, CloudTrail, EC2 và GuardDuty.
@@ -93,7 +98,7 @@ Chi phí triển khai hàng tháng điển hình (Bậc miễn phí / Quy mô nh
 - **KMS**: ~$1.12/tháng
 - **CloudTrail**: ~$0.55/tháng
 - **Athena**: ~$0.29/tháng
-- **Lambda, Step Functions, SNS, DynamoDB**: Thường nằm trong giới hạn Bậc miễn phí cho mức sử dụng thông thường.
+- **Lambda, Step Functions, SNS**: Thường nằm trong giới hạn Bậc miễn phí cho mức sử dụng thông thường.
 
 **Lưu ý**: Chi phí giả định mức sử dụng thông thường từ 20-150 sự cố mỗi tháng.
 

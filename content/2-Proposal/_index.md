@@ -48,6 +48,11 @@ Our solution uses a comprehensive multi-stage architecture for automated inciden
 - **Amazon Cognito**: Secures access for dashboard users.
 - **Amazon CloudFront**: Accelerates dashboard delivery across the globe.
 - **Amazon SNS & SES**: Handles notifications via messaging and email.
+- **AWS CloudTrail**: Logs all actions for auditing.
+- **Amazon CloudWatch**: Monitoring and dashboards.
+- **Amazon EC2**: Optional instances for analysis.
+- **AWS KMS**: Key management for encryption.
+- **Amazon Kinesis Data Firehose**: Streams data to S3.
 
 ### Component Design
 - **Data Collection & Detection Layer**: Collects events from VPC Flow Logs, CloudTrail, EC2, and GuardDuty.
@@ -93,7 +98,7 @@ Typical monthly deployment cost (Free Tier / Low scale): **~$5.01**
 - **KMS**: ~$1.12/month
 - **CloudTrail**: ~$0.55/month
 - **Athena**: ~$0.29/month
-- **Lambda, Step Functions, SNS, DynamoDB**: Generally within Free Tier limits for typical usage.
+- **Lambda, Step Functions, SNS**: Generally within Free Tier limits for typical usage.
 
 
 **Note**: Costs assume typical usage of 20-150 incidents per month.
