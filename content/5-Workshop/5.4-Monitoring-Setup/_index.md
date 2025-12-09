@@ -39,9 +39,7 @@ This Monitoring Setup phase activates and configures the three core log sources 
       - **Management events**: All (Read + Write)
       - **Data events**: S3 - Log all events
 
-4.  **Advanced event selectors** (replace `ACCOUNT_ID` and `REGION`):
-
-<!-- end list -->
+4.  **Advanced event selectors: Exlcude log buckets** (replace `ACCOUNT_ID` and `REGION`):
 
 ```json
 [

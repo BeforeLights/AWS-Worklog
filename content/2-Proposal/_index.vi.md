@@ -509,11 +509,14 @@ Dự án được coi là thành công nếu:
 **Frontend & Bảng điều khiển:**
 * HTML/CSS/JavaScript tùy chỉnh
 * AWS Management Console
+* API Gateway (tạo điều kiện kết nối giữa bảng điều khiển tĩnh và các chức năng dữ liệu pháp y backend.)
+* CloudFront (CDN để tăng tốc độ phân phối bảng điều khiển tĩnh được lưu trữ trên S3.)
 
 **Backend & Xử lý:**
 * AWS Step Functions (điều phối quy trình làm việc)
 * AWS Lambda (Python 3.12)
 * Amazon EC2 (các instance phân tích)
+* Amazon EventBridge (bộ định tuyến sự kiện gửi các phát hiện bảo mật từ GuardDuty đến quy trình làm việc Step Functions.)
 
 **Dữ liệu & Lưu trữ:**
 * Amazon S3 (lưu trữ bằng chứng pháp y)
@@ -521,6 +524,7 @@ Dự án được coi là thành công nếu:
 * Amazon Athena (truy vấn SQL trên dữ liệu S3)
 * AWS CloudTrail (nhật ký kiểm toán)
 * AWS CloudWatch (nhật ký luồng)
+* Firehose (chịu trách nhiệm truyền dữ liệu pháp y đã xử lý đến S3)
 
 **Cơ sở hạ tầng & Tự động hóa:**
 * AWS CDK (Cơ sở hạ tầng dưới dạng Mã, Python)
@@ -531,6 +535,9 @@ Dự án được coi là thành công nếu:
 * Amazon GuardDuty (phát hiện mối đe dọa)
 * Amazon CloudWatch (giám sát và cảnh báo)
 * Amazon Cognito (xác thực)
+* SNS (Phân phối cảnh báo sự cố đến các kênh như Slack và Email.)
+* SES (Gửi thông báo email như một phần của quy trình cảnh báo.)
+* KMS (Được sử dụng để quản lý khóa, điều cần thiết cho AES-256)
 
 ### Phụ lục B: Thuật ngữ Chính
 

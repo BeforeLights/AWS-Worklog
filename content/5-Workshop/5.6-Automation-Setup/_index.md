@@ -25,7 +25,6 @@ pre : " <b> 5.6. </b> "
 2.  **Type**: Standard, **Name**: `IncidentResponseAlerts`
 3.  **Access policy**:
 
-<!-- end list -->
 
 ```json
 {
@@ -93,8 +92,6 @@ pre : " <b> 5.6. </b> "
 2.  **Name**: `IncidentResponseAlert`
 3.  **Event pattern**:
 
-<!-- end list -->
-
 ```json
 {
   "source": ["aws.guardduty"],
@@ -106,7 +103,7 @@ pre : " <b> 5.6. </b> "
       - **SNS topic**: `IncidentResponseAlerts`
       - **Step Functions**: `IncidentResponseStepFunctions` with role `IncidentResponseStepFunctionsEventRole`
 
-## 18\. Configure Athena Workgroup
+## Configure Athena Workgroup
 
 1.  **Athena Console** → **Workgroups** → `primary` → **Edit**
 2.  **Query result location**: `s3://athena-query-results-ACCOUNT_ID-REGION/`

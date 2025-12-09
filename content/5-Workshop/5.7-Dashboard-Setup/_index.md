@@ -5,28 +5,15 @@ weight : 07
 chapter : false
 pre : " <b> 5.7. </b> "
 ---
-Congratulations on completing this workshop! 
-In this workshop, you learned architecture patterns for accessing Amazon S3 without using the Public Internet. 
-+ By creating a gateway endpoint, you enabled direct communication between EC2 resources and Amazon S3, without traversing an Internet Gateway. 
-+ By creating an interface endpoint you extended S3 connectivity to resources running in your on-premises data center via AWS Site-to-Site VPN or Direct Connect. 
 
-#### clean up
-1. Navigate to Hosted Zones on the left side of Route 53 console. Click the name of *s3.us-east-1.amazonaws.com* zone. Click Delete and confirm deletion by typing delete. 
+This guide will show you how to setup the security dashboard. The security dashboard will be using S3 to contain the web files and folder, Lambda to query data using Athena, API Gateway
+to routing api to Lambda and Cloudfront to caching and access to the web using it's URL.
 
-![hosted zone](/images/5-Workshop/5.6-Cleanup/delete-zone.png)
+-----
+#### Content
 
-2. Disassociate the Route 53 Resolver Rule - myS3Rule from "VPC Onprem" and Delete it. 
-
-![hosted zone](/images/5-Workshop/5.6-Cleanup/vpc.png)
-
-4. Open the CloudFormation console  and delete the two CloudFormation Stacks that you created for this lab:
-+ PLOnpremSetup
-+ PLCloudSetup
-
-![delete stack](/images/5-Workshop/5.6-Cleanup/delete-stack.png)
-
-5. Delete S3 buckets
-+ Open S3 console
-+ Choose the bucket we created for the lab, click and confirm empty. Click delete and confirm delete.
-
-![delete s3](/images/5-Workshop/5.6-Cleanup/delete-s3.png)
+- [Setup S3](5.7.1-Setup-S3/)
+- [Setup Lambda](5.7.2-Setup-Lambda/)
+- [Setup API Gateway](5.7.3-Setup-API-Gateway/)
+- [Setup Cloudfront](5.7.4-Setup-Cloudfront/)
+- [Setup Cognito](5.7.5-Setup-Cognito/)
