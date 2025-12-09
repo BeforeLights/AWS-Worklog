@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 6. </b> "
 ---
 
-During my internship at **Amazon** from **08/09/2025** to **09/12/2025**, I had the opportunity to learn, practice, and apply the knowledge acquired in school to a real-world working environment.  
+During my internship at **Amazon Web Services (AWS)** from **08/09/2025** to **09/12/2025**, I had the opportunity to learn, practice, and apply the knowledge acquired in school to a real-world working environment.  
 I participated in the **AWS First Cloud Journey Internship**, through which I improved my skills in **Cloud Computing, Infrastructure as Code (IaC), DevOps practices, Security compliance, and Solutions Architecture**.  
 
 In terms of work ethic, I always strived to complete tasks well, complied with workplace regulations, and actively engaged with colleagues to improve work efficiency.
