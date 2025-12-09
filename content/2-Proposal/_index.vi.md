@@ -98,6 +98,9 @@ Chi phí triển khai hàng tháng điển hình (Bậc miễn phí / Quy mô nh
 - **KMS**: ~$1.12/tháng
 - **CloudTrail**: ~$0.55/tháng
 - **Athena**: ~$0.29/tháng
+- **Amazon Simple Email Service (SES)**: ~$0.09/tháng
+- **Amazon API Gateway**: ~$0.05/tháng
+- **Amazon Data firehose**: ~$0.04/tháng
 - **Lambda, Step Functions, SNS**: Thường nằm trong giới hạn Bậc miễn phí cho mức sử dụng thông thường.
 
 **Lưu ý**: Chi phí giả định mức sử dụng thông thường từ 20-150 sự cố mỗi tháng.

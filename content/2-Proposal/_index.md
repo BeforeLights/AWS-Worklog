@@ -98,6 +98,9 @@ Typical monthly deployment cost (Free Tier / Low scale): **~$5.01**
 - **KMS**: ~$1.12/month
 - **CloudTrail**: ~$0.55/month
 - **Athena**: ~$0.29/month
+- **Amazon Simple Email Service (SES)**: ~$0.09/month
+- **Amazon API Gateway**: ~$0.05/month
+- **Amazon Data firehose**: ~$0.04/month
 - **Lambda, Step Functions, SNS**: Generally within Free Tier limits for typical usage.
 
 
