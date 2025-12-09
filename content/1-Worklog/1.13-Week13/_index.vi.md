@@ -17,11 +17,11 @@ pre: " <b> 1.13. </b> "
 ### Các nhiệm vụ thực hiện trong tuần:
 | Ngày | Nhiệm vụ                                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo                        |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | Hoàn tất thiết lập bảng Jira. Dịch Bản đề xuất từ Google Doc sang tiếng Việt và đưa vào phần đề xuất.                                                                                                  | 24/11/2025 | 24/11/2025      | Jira, Google Docs                         |
-| 3   | Bắt đầu định dạng tài liệu và tổ chức cấu trúc thư mục Hugo. (Ngày 1/3)                                                                                                                                | 25/11/2025 | 25/11/2025      | Tài liệu Hugo                             |
-| 4   | Tiếp tục định dạng tài liệu, sửa các lỗi markdown và đảm bảo kiểu dáng nhất quán. (Ngày 2/3)                                                                                                           | 26/11/2025 | 26/11/2025      | Hugo Themes                               |
-| 5   | Hoàn thành việc định dạng tài liệu. Dịch toàn bộ nội dung hội thảo Hugo sang tiếng Việt.                                                                                                               | 27/11/2025 | 27/11/2025      | Công cụ dịch thuật                        |
-| 6   | Triển khai trang Hugo lên GitHub Pages. Giúp bạn bè và thành viên nhóm triển khai trang web của họ lên GitHub và sửa các lỗi build.                                                                    | 28/11/2025 | 28/11/2025      | GitHub Actions                            |
+| 2   | Hoàn tất thiết lập bảng Jira. Dịch Bản đề xuất từ Google Doc sang tiếng Việt và đưa vào phần đề xuất.                                                                                                  | 01/12/2025 | 01/12/2025      |  |
+| 3   | Bắt đầu định dạng tài liệu và tổ chức cấu trúc thư mục Hugo.                                                                                                                                | 02/12/2025 | 02/12/2025      | |
+| 4   | Tiếp tục định dạng tài liệu, sửa các lỗi markdown và đảm bảo kiểu dáng nhất quán.                                                                                     | 03/12/2025 | 03/12/2025      | |
+| 5   | Hoàn thành việc định dạng tài liệu. Dịch toàn bộ nội dung hội thảo Hugo sang tiếng Việt.                                                                                                               | 04/12/2025 | 04/12/2025      ||
+| 6   | Triển khai trang Hugo lên GitHub Pages. Giúp bạn bè và thành viên nhóm triển khai trang web của họ lên GitHub và sửa các lỗi build.                                                                    | 05/12/2025 | 05/12/2025      ||
 
 
 ### Kết quả đạt được Tuần 13:
